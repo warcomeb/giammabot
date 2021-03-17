@@ -77,8 +77,8 @@ $Comp
 L nowae-connector:CONN_2X1 P103
 U 1 1 6051BB08
 P 3000 1550
-F 0 "P103" H 3078 1601 50  0000 L CNN
-F 1 "MOTOR_SX" H 3078 1510 50  0000 L CNN
+F 0 "P103" H 3100 1600 50  0000 L CNN
+F 1 "MOTOR_SX" H 3100 1500 50  0000 L CNN
 F 2 "CONNECTOR_MPT:CONN-MPT0.5_2-2.54" H 3375 1550 60  0001 C CNN
 F 3 "" H 3375 1550 60  0001 C CNN
 F 4 "-" H 3000 1200 60  0001 C CNN "Manufacturer"
@@ -91,26 +91,6 @@ F 10 "-" H 3000 600 60  0001 C CNN "Distributor2 Code"
 F 11 "-" H 3000 500 60  0001 C CNN "Distributor3"
 F 12 "-" H 3000 400 60  0001 C CNN "Distributor3 Code"
 	1    3000 1550
-	1    0    0    -1  
-$EndComp
-$Comp
-L nowae-connector:CONN_2X1 P104
-U 1 1 6051D541
-P 3000 1900
-F 0 "P104" H 3078 1951 50  0000 L CNN
-F 1 "MOTOR_DX" H 3078 1860 50  0000 L CNN
-F 2 "CONNECTOR_MPT:CONN-MPT0.5_2-2.54" H 3375 1900 60  0001 C CNN
-F 3 "" H 3375 1900 60  0001 C CNN
-F 4 "-" H 3000 1550 60  0001 C CNN "Manufacturer"
-F 5 "-" H 3000 1450 60  0001 C CNN "Part Number"
-F 6 "-" H 3000 1350 60  0001 C CNN "Distributor"
-F 7 "-" H 3000 1250 60  0001 C CNN "Distributor Code"
-F 8 "-" H 3000 1150 60  0001 C CNN "Price €"
-F 9 "-" H 3000 1050 60  0001 C CNN "Distributor2"
-F 10 "-" H 3000 950 60  0001 C CNN "Distributor2 Code"
-F 11 "-" H 3000 850 60  0001 C CNN "Distributor3"
-F 12 "-" H 3000 750 60  0001 C CNN "Distributor3 Code"
-	1    3000 1900
 	1    0    0    -1  
 $EndComp
 $Comp
@@ -159,4 +139,48 @@ Wire Notes Line
 	3700 5500 3700 2350
 Text Notes 3750 5450 0    61   ~ 0
 NUCLEO-64 Board Connector
+$Comp
+L nowae-connector:CONN_2X1 P104
+U 1 1 6051D541
+P 3000 2050
+F 0 "P104" H 3100 2000 50  0000 L CNN
+F 1 "MOTOR_DX" H 3100 2100 50  0000 L CNN
+F 2 "CONNECTOR_MPT:CONN-MPT0.5_2-2.54" H 3375 2050 60  0001 C CNN
+F 3 "" H 3375 2050 60  0001 C CNN
+F 4 "-" H 3000 1700 60  0001 C CNN "Manufacturer"
+F 5 "-" H 3000 1600 60  0001 C CNN "Part Number"
+F 6 "-" H 3000 1500 60  0001 C CNN "Distributor"
+F 7 "-" H 3000 1400 60  0001 C CNN "Distributor Code"
+F 8 "-" H 3000 1300 60  0001 C CNN "Price €"
+F 9 "-" H 3000 1200 60  0001 C CNN "Distributor2"
+F 10 "-" H 3000 1100 60  0001 C CNN "Distributor2 Code"
+F 11 "-" H 3000 1000 60  0001 C CNN "Distributor3"
+F 12 "-" H 3000 900 60  0001 C CNN "Distributor3 Code"
+	1    3000 2050
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	2250 1750 2650 1750
+Wire Wire Line
+	2650 1750 2650 1600
+Wire Wire Line
+	2650 1600 2850 1600
+Wire Wire Line
+	2250 1650 2550 1650
+Wire Wire Line
+	2550 1650 2550 1500
+Wire Wire Line
+	2550 1500 2850 1500
+Wire Wire Line
+	2250 1850 2650 1850
+Wire Wire Line
+	2650 1850 2650 2000
+Wire Wire Line
+	2650 2000 2850 2000
+Wire Wire Line
+	2250 1950 2550 1950
+Wire Wire Line
+	2550 1950 2550 2100
+Wire Wire Line
+	2550 2100 2850 2100
 $EndSCHEMATC
