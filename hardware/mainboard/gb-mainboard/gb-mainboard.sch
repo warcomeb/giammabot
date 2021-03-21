@@ -2034,4 +2034,28 @@ Text Label 7500 4600 2    50   ~ 0
 LED_LX_GREEN
 Text Label 7500 4750 2    50   ~ 0
 LED_LX_BLUE
+Wire Wire Line
+	8750 1300 9400 1300
+Wire Wire Line
+	8750 1400 9400 1400
+Wire Wire Line
+	8450 1300 7800 1300
+Text Label 9400 1300 2    50   ~ 0
+LED_LX_RED
+Text Label 9400 1400 2    50   ~ 0
+LED_LX_GREEN
+Text Label 7800 1300 0    50   ~ 0
+LED_LX_BLUE
+Wire Wire Line
+	7800 1900 8450 1900
+Wire Wire Line
+	7800 2000 8450 2000
+Text Label 7800 1900 0    50   ~ 0
+LED_RX_RED
+Text Label 7800 2000 0    50   ~ 0
+LED_RX_GREEN
+Wire Wire Line
+	7800 2100 8450 2100
+Text Label 7800 2100 0    50   ~ 0
+LED_RX_BLUE
 $EndSCHEMATC
