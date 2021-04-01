@@ -294,22 +294,6 @@ Wire Wire Line
 Wire Wire Line
 	4800 2000 4450 2000
 Connection ~ 4450 2000
-$Comp
-L nowae-diode:MBRA340T3G D101
-U 1 1 6059574D
-P 7350 1200
-F 0 "D101" H 7350 1300 50  0000 C CNN
-F 1 "MBRA340T3G" H 7350 1100 50  0000 C CNN
-F 2 "DIODE:DIODE-DO214AC-UNI" H 7350 1000 60  0001 C CNN
-F 3 "http://www.onsemi.com/pub/Collateral/MBRA340T3-D.PDF" H 7350 900 60  0001 C CNN
-F 4 "ON Semiconductor" H 7350 800 60  0001 C CNN "Manufacturer"
-F 5 "MBRA340T3G" H 7350 700 60  0001 C CNN "Part Number"
-F 6 "Farnell Italia S.r.l." H 7350 600 60  0001 C CNN "Distributor"
-F 7 "1431078" H 7350 500 60  0001 C CNN "Distributor Code"
-F 8 "0.396" H 7350 400 60  0001 C CNN "Price €"
-	1    7350 1200
-	1    0    0    -1  
-$EndComp
 Wire Notes Line
 	8600 2600 8600 550 
 Wire Notes Line
@@ -1740,4 +1724,20 @@ F 12 "-" H 10900 450 60  0001 C CNN "Distributor3 Code"
 $EndComp
 NoConn ~ 10750 2250
 NoConn ~ 9700 2250
+$Comp
+L nowae-diode:MBRA340T3G D101
+U 1 1 60709CE4
+P 7350 1200
+F 0 "D101" H 7350 1300 50  0000 C CNN
+F 1 "MBRA340T3G" H 7350 1100 50  0000 C CNN
+F 2 "DIODE:DIODE-DO214AC-UNI" H 7350 1000 60  0001 C CNN
+F 3 "http://www.onsemi.com/pub/Collateral/MBRA340T3-D.PDF" H 7350 900 60  0001 C CNN
+F 4 "ON Semiconductor" H 7350 800 60  0001 C CNN "Manufacturer"
+F 5 "MBRA340T3G" H 7350 700 60  0001 C CNN "Part Number"
+F 6 "Farnell Italia S.r.l." H 7350 600 60  0001 C CNN "Distributor"
+F 7 "1431078" H 7350 500 60  0001 C CNN "Distributor Code"
+F 8 "0.396" H 7350 400 60  0001 C CNN "Price €"
+	1    7350 1200
+	1    0    0    -1  
+$EndComp
 $EndSCHEMATC
