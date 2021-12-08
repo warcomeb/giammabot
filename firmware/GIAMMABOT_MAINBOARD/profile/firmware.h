@@ -1,0 +1,69 @@
+/*!
+ * \file   /firmware.h
+ *
+ * \brief Firmware profile
+ *
+ * \copyright
+ *         This file is part of the Saturno2 Control Board project.
+ *         Copyright (C) 2020 AM Microsystems S.r.l. <https://www.am-microsystems.com>
+ *         C.da Montedoro 30, I-62010 Urbisaglia, Macerata, Italy
+ */
+
+#ifndef FIRMWARE_PROFILE_H
+#define FIRMWARE_PROFILE_H
+
+#include "libohiboard.h"
+
+#ifdef __cplusplus
+extern "C" {
+#endif
+
+// Firmware Version ------------------------------------------------------------
+
+#if !defined(FIRMWARE_VERSION_MAJOR)
+#define FIRMWARE_VERSION_MAJOR                   1
+#endif
+
+#if !defined(FIRMWARE_VERSION_MINOR)
+#define FIRMWARE_VERSION_MINOR                   0
+#endif
+
+#if !defined(FIRMWARE_VERSION_SUBMINOR)
+#define FIRMWARE_VERSION_SUBMINOR                0
+#endif
+
+#if !defined(FIRMWARE_VERSION_BUILD)
+#define FIRMWARE_VERSION_BUILD                   0
+#endif
+
+#if !defined(FIRMWARE_VERSION_TIME)
+#define FIRMWARE_VERSION_TIME                    1622111734
+#endif
+
+static const Utility_Version_t FIRMWARE_VERSION =
+{
+    {
+        FIRMWARE_VERSION_MAJOR,
+        FIRMWARE_VERSION_MINOR,
+        FIRMWARE_VERSION_BUILD,
+        FIRMWARE_VERSION_TIME
+    }
+};
+
+#define FIRMWARE_VERSION_STRING1(x,y,z)           UTILITY_STRING1(x) "." UTILITY_STRING1(y) "." UTILITY_STRING1(z)
+#define FIRMWARE_VERSION_STRING                   FIRMWARE_VERSION_STRING1(FIRMWARE_VERSION_MAJOR,FIRMWARE_VERSION_MINOR,FIRMWARE_VERSION_SUBMINOR)
+
+
+// ------------------------------------------------------------ Firmware Version
+
+#if ((FIRMWARE_VERSION_MAJOR == 1) && (FIRMWARE_VERSION_MINOR == 0))
+#include "firmware_1_0_x.h"
+#else
+#error "NO FIRMWARE PROFILE DEFINED!"
+#endif
+
+#ifdef __cplusplus
+}
+#endif
+
+#endif // FIRMWARE_PROFILE_H
