@@ -1,0 +1,9 @@
+[submodule "firmware/GIAMMABOT_MAINBOARD/hal/libohiboard"]
+	path = firmware/GIAMMABOT_MAINBOARD/hal/libohiboard
+	url = https://github.com/ohilab/libohiboard.git
+[submodule "firmware/GIAMMABOT_MAINBOARD/library/wcdli"]
+	path = firmware/GIAMMABOT_MAINBOARD/library/wcdli
+	url = https://github.com/warcomeb/wcdli.git
+[submodule "firmware/GIAMMABOT_MAINBOARD/library/wets"]
+	path = firmware/GIAMMABOT_MAINBOARD/library/wets
+	url = https://github.com/warcomeb/wets.git
