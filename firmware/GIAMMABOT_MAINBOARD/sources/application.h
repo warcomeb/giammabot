@@ -39,12 +39,12 @@
 /*!
  *
  */
-void Application_setup (void);
+void setup (void);
 
 /*!
  *
  */
-void Application_loop (void);
+void loop (void);
 
 
 #endif // APPLICATION_H

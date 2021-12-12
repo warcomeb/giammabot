@@ -25,7 +25,7 @@
  */
 
 /*!
- * \file   main.cpp
+ * \file   TurnLight.cpp
  *
  * \brief
  *
@@ -33,21 +33,55 @@
  *            Copyright (C) 2021 GIAMMATeam <http://www.warcomeb.it>
  */
 
-#include "hardware.h"
-#include "firmware.h"
+#include "TurnLight.h"
 
-#include "board.h"
-#include "application.h"
-
-//#include "wcdli.h"
-
-int main (void)
+TurnLight::TurnLight()
 {
-    Board_init();
+    // TODO Auto-generated constructor stub
 
-    setup();
+}
 
-    loop();
+TurnLight::TurnLight(Gpio_Pins redLeft, Gpio_Pins greenLeft, Gpio_Pins blueLeft,
+                     Gpio_Pins redRight, Gpio_Pins greenRight, Gpio_Pins blueRight)
+{
+    this->mLeftRed   = redLeft;
+    this->mLeftGreen = greenLeft;
+    this->mLeftBlue  = blueLeft;
 
-    return 0;
+    this->mRightRed   = redRight;
+    this->mRightGreen = greenRight;
+    this->mRightBlue  = blueRight;
+}
+
+TurnLight::~TurnLight()
+{
+    // TODO Auto-generated destructor stub
+}
+
+void TurnLight::init (void)
+{
+    Gpio_config(this->mLeftRed,   GPIO_PINS_OUTPUT);
+    Gpio_config(this->mLeftGreen, GPIO_PINS_OUTPUT);
+    Gpio_config(this->mLeftBlue,  GPIO_PINS_OUTPUT);
+
+    Gpio_config(this->mRightRed,  GPIO_PINS_OUTPUT);
+    Gpio_config(this->mRightGreen,GPIO_PINS_OUTPUT);
+    Gpio_config(this->mRightBlue, GPIO_PINS_OUTPUT);
+
+    this->off();
+}
+
+void TurnLight::off (void)
+{
+    Gpio_set(this->mLeftRed);
+    Gpio_set(this->mLeftGreen);
+    Gpio_set(this->mLeftBlue);
+    Gpio_set(this->mRightRed);
+    Gpio_set(this->mRightGreen);
+    Gpio_set(this->mRightBlue);
+}
+
+void TurnLight::hazards (bool on)
+{
+
 }

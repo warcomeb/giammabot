@@ -25,7 +25,7 @@
  */
 
 /*!
- * \file   main.cpp
+ * \file TurnLight.h
  *
  * \brief
  *
@@ -33,21 +33,47 @@
  *            Copyright (C) 2021 GIAMMATeam <http://www.warcomeb.it>
  */
 
-#include "hardware.h"
-#include "firmware.h"
+#ifndef TURNLIGHT_H_
+#define TURNLIGHT_H_
 
-#include "board.h"
-#include "application.h"
+#include "libohiboard.h"
 
-//#include "wcdli.h"
-
-int main (void)
+class TurnLight
 {
-    Board_init();
+public:
+    TurnLight();
+    /*!
+     *
+     */
+    TurnLight(Gpio_Pins redLeft, Gpio_Pins greenLeft, Gpio_Pins blueLeft,
+              Gpio_Pins redRight, Gpio_Pins greenRight, Gpio_Pins blueRight);
 
-    setup();
+    virtual ~TurnLight();
 
-    loop();
+    void init (void);
 
-    return 0;
-}
+    /*!
+     * Turn off all the lights.
+     */
+    void off (void);
+
+    /*!
+     * This function turn on or off the hazards lights.
+     *
+     * \param[in] on: TRUE turn on the lights, FALSE turn off.
+     */
+    void hazards (bool on);
+
+private:
+
+    Gpio_Pins mLeftRed;
+    Gpio_Pins mLeftGreen;
+    Gpio_Pins mLeftBlue;
+
+    Gpio_Pins mRightRed;
+    Gpio_Pins mRightGreen;
+    Gpio_Pins mRightBlue;
+
+};
+
+#endif /* TURNLIGHT_H_ */

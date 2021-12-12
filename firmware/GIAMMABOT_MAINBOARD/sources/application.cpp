@@ -33,14 +33,25 @@
  *            Copyright (C) 2021 GIAMMATeam <http://www.warcomeb.it>
  */
 
+#include "hardware.h"
 #include "application.h"
 
-void Application_setup (void)
-{
+#include "TurnLight.h"
 
+TurnLight Light(TURN_SIGNAL_LX_RED,
+                TURN_SIGNAL_LX_GREEN,
+                TURN_SIGNAL_LX_BLUE,
+                TURN_SIGNAL_RX_RED,
+                TURN_SIGNAL_RX_GREEN,
+                TURN_SIGNAL_RX_BLUE);
+
+void setup (void)
+{
+    Light.init();
+    Light.hazards(true);
 }
 
-void Application_loop (void)
+void loop (void)
 {
 
 }
