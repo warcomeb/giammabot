@@ -44,6 +44,40 @@
 
 #if (BOARD_TYPE == BOARD_GBMAINBOARD_R0)
 
+// TURN SIGNALS Section --------------------------------------------------------
+
+#define TURN_SIGNAL_LX_RED                       GPIO_PINS_PC11
+#define TURN_SIGNAL_LX_GREEN                     GPIO_PINS_PC10
+#define TURN_SIGNAL_LX_BLUE                      GPIO_PINS_PD2
+
+#define TURN_SIGNAL_RX_RED                       GPIO_PINS_PA13
+#define TURN_SIGNAL_RX_GREEN                     GPIO_PINS_PA14
+#define TURN_SIGNAL_RX_BLUE                      GPIO_PINS_PA15
+
+// -------------------------------------------------------- TURN SIGNALS Section
+
+// MOTOR Section --------------------------------------------------------------
+
+#define MOTOR_TIMER_DEVICE                       OB_TIM1
+
+#define MOTOR_LX_CTR1_PIN                        GPIO_PINS_PA8
+#define MOTOR_LX_CTR1_TIMER_PIN                  TIMER_PINS_PA8
+#define MOTOR_LX_CTR1_TIMER_CHANNEL              TIMER_CHANNELS_CH1
+
+#define MOTOR_LX_CTR2_PIN                        GPIO_PINS_PA9
+#define MOTOR_LX_CTR2_TIMER_PIN                  TIMER_PINS_PA9
+#define MOTOR_LX_CTR2_TIMER_CHANNEL              TIMER_CHANNELS_CH2
+
+#define MOTOR_RX_CTR1_PIN                        GPIO_PINS_PA10
+#define MOTOR_RX_CTR1_TIMER_PIN                  TIMER_PINS_PA10
+#define MOTOR_RX_CTR1_TIMER_CHANNEL              TIMER_CHANNELS_CH3
+
+#define MOTOR_RX_CTR2_PIN                        GPIO_PINS_PA11
+#define MOTOR_RX_CTR2_TIMER_PIN                  TIMER_PINS_PA11
+#define MOTOR_RX_CTR2_TIMER_CHANNEL              TIMER_CHANNELS_CH4
+
+// --------------------------------------------------------------- MOTOR Section
+
 // DEBUG Section ---------------------------------------------------------------
 
 // FIXME: Just for test, define here this macro!
