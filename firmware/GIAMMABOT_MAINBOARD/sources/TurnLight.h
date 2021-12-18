@@ -50,19 +50,21 @@ public:
 
     virtual ~TurnLight();
 
-    void init (void);
+    TurnLight& init (void);
 
     /*!
      * Turn off all the lights.
      */
-    void off (void);
+    TurnLight& off (void);
 
     /*!
      * This function turn on or off the hazards lights.
      *
      * \param[in] on: TRUE turn on the lights, FALSE turn off.
      */
-    void hazards (bool on);
+    TurnLight& hazards (bool on);
+
+    TurnLight& update (void);
 
 private:
 
@@ -74,6 +76,8 @@ private:
     Gpio_Pins mRightGreen;
     Gpio_Pins mRightBlue;
 
+    bool    mIsHazards;
+    uint8_t mHazardsCount;
 };
 
 #endif /* TURNLIGHT_H_ */

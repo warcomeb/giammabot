@@ -58,7 +58,7 @@ TurnLight::~TurnLight()
     // TODO Auto-generated destructor stub
 }
 
-void TurnLight::init (void)
+TurnLight& TurnLight::init (void)
 {
     Gpio_config(this->mLeftRed,   GPIO_PINS_OUTPUT);
     Gpio_config(this->mLeftGreen, GPIO_PINS_OUTPUT);
@@ -69,9 +69,13 @@ void TurnLight::init (void)
     Gpio_config(this->mRightBlue, GPIO_PINS_OUTPUT);
 
     this->off();
+
+    this->mIsHazards = false;
+
+    return *this;
 }
 
-void TurnLight::off (void)
+TurnLight& TurnLight::off (void)
 {
     Gpio_set(this->mLeftRed);
     Gpio_set(this->mLeftGreen);
@@ -79,9 +83,69 @@ void TurnLight::off (void)
     Gpio_set(this->mRightRed);
     Gpio_set(this->mRightGreen);
     Gpio_set(this->mRightBlue);
+
+    return *this;
 }
 
-void TurnLight::hazards (bool on)
+TurnLight& TurnLight::hazards (bool on)
 {
+    if (on)
+    {
+        this->mIsHazards = true;
+        this->mHazardsCount = 0;
+        // TODO
+    }
+    else
+    {
+        this->mIsHazards = false;
+    }
 
+    return *this;
+}
+
+TurnLight& TurnLight::update (void)
+{
+    if (this->mIsHazards)
+    {
+        switch (this->mHazardsCount)
+        {
+        case 0:
+            Gpio_clear(this->mLeftRed);
+            Gpio_set(this->mLeftGreen);
+            Gpio_set(this->mLeftBlue);
+
+            Gpio_clear(this->mRightRed);
+            Gpio_set(this->mRightGreen);
+            Gpio_set(this->mRightBlue);
+            break;
+        case 2:
+            Gpio_set(this->mLeftRed);
+            Gpio_clear(this->mLeftGreen);
+            Gpio_set(this->mLeftBlue);
+
+            Gpio_set(this->mRightRed);
+            Gpio_clear(this->mRightGreen);
+            Gpio_set(this->mRightBlue);
+            break;
+        case 4:
+            Gpio_set(this->mLeftRed);
+            Gpio_set(this->mLeftGreen);
+            Gpio_clear(this->mLeftBlue);
+
+            Gpio_set(this->mRightRed);
+            Gpio_set(this->mRightGreen);
+            Gpio_clear(this->mRightBlue);
+            break;
+        case 6:
+            this->off();
+            break;
+        default:
+            break;
+        }
+
+        this->mHazardsCount++;
+        if (this->mHazardsCount == 8) this->mHazardsCount = 0;
+
+    }
+    return *this;
 }
