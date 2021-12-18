@@ -52,13 +52,15 @@ public:
 
     PWMChannel& stop (void);
 
-    PWMChannel& setDutyCicle (uint8_t value);
+    PWMChannel& setDutyCycle (uint8_t value);
 
 private:
 
     Timer_DeviceHandle mTimer;
     Timer_Pins         mPin;
     Timer_Channels     mChannel;
+
+    uint8_t            mDutyCycle;
 };
 
 #endif /* PWMCHANNEL_H_ */

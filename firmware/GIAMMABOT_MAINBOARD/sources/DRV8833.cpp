@@ -41,12 +41,56 @@ DRV8833::DRV8833(PWMChannel a1, PWMChannel a2, PWMChannel b1, PWMChannel b2):
     mChannelB1(b1),
     mChannelB2(b2)
 {
-    // TODO Auto-generated constructor stub
+    // Initialize all PWM channels
+    // The default start-up duty cycle is 0%
+    this->mChannelA1.init();
+    this->mChannelA2.init();
+    this->mChannelB1.init();
+    this->mChannelB2.init();
 
+    this->mMotorARunning = false;
+    this->mMotorBRunning = false;
+
+    this->mMotorASpeed = 0;
+    this->mMotorBSpeed = 0;
 }
 
 DRV8833::~DRV8833()
 {
     // TODO Auto-generated destructor stub
+}
+
+DRV8833& DRV8833::setSpeed (Motor_t motor, int8_t speed)
+{
+
+    return *this;
+}
+
+int8_t DRV8833::speed (DRV8833::Motor_t motor)
+{
+    return 0;
+}
+
+bool DRV8833::isRunnig (DRV8833::Motor_t motor)
+{
+    if (motor == DRV8833::MOTOR_A)
+    {
+        return this->mMotorARunning;
+    }
+    else if (motor == DRV8833::MOTOR_B)
+    {
+        return this->mMotorBRunning;
+    }
+    return false;
+}
+
+DRV8833& DRV8833::start (DRV8833::Motor_t motor)
+{
+    return *this;
+}
+
+DRV8833& DRV8833::stop (DRV8833::Motor_t motor)
+{
+    return *this;
 }
 

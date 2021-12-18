@@ -42,8 +42,7 @@ PWMChannel::PWMChannel(Timer_DeviceHandle timer,
     mPin(pin),
     mChannel(channel)
 {
-    // Nothing to do!
-
+    this->mDutyCycle = 0;
 }
 
 PWMChannel::~PWMChannel()
@@ -79,7 +78,7 @@ PWMChannel& PWMChannel::stop (void)
     return *this;
 }
 
-PWMChannel& PWMChannel::setDutyCicle (uint8_t value)
+PWMChannel& PWMChannel::setDutyCycle (uint8_t value)
 {
     if (value <= 100)
     {

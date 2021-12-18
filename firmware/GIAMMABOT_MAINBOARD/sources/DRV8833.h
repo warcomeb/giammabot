@@ -43,8 +43,37 @@
 class DRV8833
 {
 public:
+
+    typedef enum
+    {
+        MOTOR_A,
+        MOTOR_B
+    } Motor_t;
+
     DRV8833(PWMChannel a1, PWMChannel a2, PWMChannel b1, PWMChannel b2);
     virtual ~DRV8833();
+
+    /*!
+     * This function set the speed of the selected motor.
+     *
+     * \param[in] motor: Select the motor
+     * \param[in] speed: The new speed value
+     */
+    DRV8833& setSpeed (Motor_t motor, int8_t speed);
+
+    /*!
+     * This function return the current speed of the selected motor.
+     *
+     * \param[in] motor: Select the motor
+     * \return The current speed value.
+     */
+    int8_t speed (Motor_t motor = MOTOR_A);
+
+    bool isRunnig (Motor_t motor = MOTOR_A);
+
+    DRV8833& start (Motor_t motor = MOTOR_A);
+
+    DRV8833& stop (Motor_t motor = MOTOR_A);
 
 private:
 
@@ -52,6 +81,12 @@ private:
     PWMChannel mChannelA2;
     PWMChannel mChannelB1;
     PWMChannel mChannelB2;
+
+    bool mMotorARunning;
+    bool mMotorBRunning;
+
+    int8_t mMotorASpeed;
+    int8_t mMotorBSpeed;
 };
 
 #endif /* DRV8833_H_ */
