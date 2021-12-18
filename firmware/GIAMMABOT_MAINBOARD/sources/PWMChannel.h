@@ -45,6 +45,20 @@ public:
                Timer_Pins         pin,
                Timer_Channels     channel);
     virtual ~PWMChannel();
+
+    PWMChannel& init (uint8_t duty = 0);
+
+    PWMChannel& start (void);
+
+    PWMChannel& stop (void);
+
+    PWMChannel& setDutyCicle (uint8_t value);
+
+private:
+
+    Timer_DeviceHandle mTimer;
+    Timer_Pins         mPin;
+    Timer_Channels     mChannel;
 };
 
 #endif /* PWMCHANNEL_H_ */

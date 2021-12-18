@@ -37,14 +37,54 @@
 
 PWMChannel::PWMChannel(Timer_DeviceHandle timer,
                        Timer_Pins         pin,
-                       Timer_Channels     channel)
+                       Timer_Channels     channel):
+    mTimer(timer),
+    mPin(pin),
+    mChannel(channel)
 {
-    // TODO Auto-generated constructor stub
+    // Nothing to do!
 
 }
 
 PWMChannel::~PWMChannel()
 {
     // TODO Auto-generated destructor stub
+}
+
+PWMChannel& PWMChannel::init (uint8_t duty)
+{
+    Timer_OutputCompareConfig pinConfig =
+    {
+        mode     : TIMER_OUTPUTCOMPAREMODE_PWM1,
+        channel  : this->mChannel,
+        duty     : duty,
+        pulse    : 0,
+        fastMode : FALSE,
+        polarity : GPIO_HIGH,
+    };
+    Timer_configPwmPin(this->mTimer,&pinConfig,this->mPin);
+
+    return *this;
+}
+
+PWMChannel& PWMChannel::start (void)
+{
+    Timer_startPwm(this->mTimer,this->mChannel);
+    return *this;
+}
+
+PWMChannel& PWMChannel::stop (void)
+{
+    Timer_stopPwm(this->mTimer,this->mChannel);
+    return *this;
+}
+
+PWMChannel& PWMChannel::setDutyCicle (uint8_t value)
+{
+    if (value <= 100)
+    {
+        Timer_setPwmDuty(this->mTimer,this->mChannel,value);
+    }
+    return *this;
 }
 
