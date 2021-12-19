@@ -47,12 +47,14 @@
 // TURN SIGNALS Section --------------------------------------------------------
 
 #define TURN_SIGNAL_LX_RED                       GPIO_PINS_PC11
-#define TURN_SIGNAL_LX_GREEN                     GPIO_PINS_PC10
-#define TURN_SIGNAL_LX_BLUE                      GPIO_PINS_PD2
+#define TURN_SIGNAL_LX_GREEN                     GPIO_PINS_PD2
+#define TURN_SIGNAL_LX_BLUE                      GPIO_PINS_PC10
 
-#define TURN_SIGNAL_RX_RED                       GPIO_PINS_PA13
-#define TURN_SIGNAL_RX_GREEN                     GPIO_PINS_PA14
+#define TURN_SIGNAL_RX_RED                       GPIO_PINS_PC3
+#define TURN_SIGNAL_RX_GREEN                     GPIO_PINS_PC0
 #define TURN_SIGNAL_RX_BLUE                      GPIO_PINS_PA15
+
+#define TURN_SIGNAL_TIMER_DEVICE                 OB_TIM16
 
 // -------------------------------------------------------- TURN SIGNALS Section
 

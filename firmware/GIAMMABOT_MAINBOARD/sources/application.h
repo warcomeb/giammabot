@@ -36,6 +36,8 @@
 #ifndef APPLICATION_H
 #define APPLICATION_H
 
+#include "hardware.h"
+
 /*!
  *
  */
@@ -46,5 +48,9 @@ void setup (void);
  */
 void loop (void);
 
+/*!
+ *
+ */
+void turnLightUpdate (Timer_DeviceHandle timer);
 
 #endif // APPLICATION_H

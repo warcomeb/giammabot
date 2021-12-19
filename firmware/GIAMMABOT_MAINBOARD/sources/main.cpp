@@ -47,7 +47,12 @@ int main (void)
 
     setup();
 
-    loop();
+    volatile uint32_t i = 0;
+    while (1)
+    {
+        i++;
+        loop();
+    }
 
     return 0;
 }

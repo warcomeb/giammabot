@@ -36,6 +36,8 @@
 #include "board.h"
 #include "firmware.h"
 
+#include "application.h"
+
 //#include "wets.h"
 
 #ifdef __cplusplus
@@ -98,6 +100,29 @@ static void initTimer (void)
 
     // Compute tiks and set prescaler...
     LowPowerTimer_startCounter(OB_LPTIM1,328);
+
+
+    // Initialize turn-light timer
+    Timer_Config turnLightTimerConfig =
+    {
+        mode                : TIMER_MODE_FREE,
+
+        timerFrequency      : 10, // [Hz]
+
+        clockSource         : TIMER_CLOCKSOURCE_INTERNAL,
+
+        //clockPolarity  : TIMER_CLOCKPOLARITY_RISING,
+        //clockPrescaler : TIMER_CLOCKPRESCALER_1,
+        clockFilter         : 0,
+
+        autoreload          : TRUE,
+
+        freeCounterCallback : turnLightUpdate,
+
+        counterMode         : TIMER_COUNTERMODE_UP,
+    };
+    Timer_init(TURN_SIGNAL_TIMER_DEVICE,&turnLightTimerConfig);
+    Timer_start(TURN_SIGNAL_TIMER_DEVICE);
 }
 
 static void initGpio (void)

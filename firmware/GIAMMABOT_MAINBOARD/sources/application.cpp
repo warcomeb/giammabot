@@ -33,10 +33,12 @@
  *            Copyright (C) 2021 GIAMMATeam <http://www.warcomeb.it>
  */
 
-#include "hardware.h"
 #include "application.h"
 
 #include "TurnLight.h"
+
+#include "PWMChannel.h"
+#include "DRV8833.h"
 
 TurnLight Light(TURN_SIGNAL_LX_RED,
                 TURN_SIGNAL_LX_GREEN,
@@ -44,6 +46,15 @@ TurnLight Light(TURN_SIGNAL_LX_RED,
                 TURN_SIGNAL_RX_RED,
                 TURN_SIGNAL_RX_GREEN,
                 TURN_SIGNAL_RX_BLUE);
+
+PWMChannel MotorDriverLeftCh1(MOTOR_TIMER_DEVICE,MOTOR_LX_CTR1_TIMER_PIN,MOTOR_LX_CTR1_TIMER_CHANNEL);
+PWMChannel MotorDriverLeftCh2(MOTOR_TIMER_DEVICE,MOTOR_LX_CTR2_TIMER_PIN,MOTOR_LX_CTR2_TIMER_CHANNEL);
+
+PWMChannel MotorDriverRigthCh1(MOTOR_TIMER_DEVICE,MOTOR_RX_CTR1_TIMER_PIN,MOTOR_RX_CTR1_TIMER_CHANNEL);
+PWMChannel MotorDriverRigthCh2(MOTOR_TIMER_DEVICE,MOTOR_RX_CTR2_TIMER_PIN,MOTOR_RX_CTR2_TIMER_CHANNEL);
+
+DRV8833    MotorDriver(MotorDriverLeftCh1,MotorDriverLeftCh2,
+                       MotorDriverRigthCh1,MotorDriverRigthCh2);
 
 void setup (void)
 {
@@ -54,4 +65,9 @@ void setup (void)
 void loop (void)
 {
 
+}
+
+void turnLightUpdate (Timer_DeviceHandle timer)
+{
+    Light.update();
 }
