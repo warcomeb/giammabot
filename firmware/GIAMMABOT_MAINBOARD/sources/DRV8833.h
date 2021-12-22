@@ -50,7 +50,19 @@ public:
         MOTOR_B
     } Motor_t;
 
-    DRV8833(PWMChannel a1, PWMChannel a2, PWMChannel b1, PWMChannel b2);
+    typedef enum
+    {
+        NO_ERROR = 0,
+        WRONG_SPEED,
+        WRONG_MOTOR,
+    } Error_t;
+
+    DRV8833(PWMChannel* a1,
+            PWMChannel* a2,
+            PWMChannel* b1,
+            PWMChannel* b2,
+            Gpio_Pins sleep = GPIO_PINS_NONE,
+            Gpio_Pins fault = GPIO_PINS_NONE);
     virtual ~DRV8833();
 
     /*!
@@ -75,18 +87,30 @@ public:
 
     DRV8833& stop (Motor_t motor = MOTOR_A);
 
+    DRV8833& sleep (bool goSleep);
+
+    /*!
+     * This function return the current status error.
+     */
+    Error_t error (void);
+
 private:
 
-    PWMChannel mChannelA1;
-    PWMChannel mChannelA2;
-    PWMChannel mChannelB1;
-    PWMChannel mChannelB2;
+    PWMChannel* mChannelA1;
+    PWMChannel* mChannelA2;
+    PWMChannel* mChannelB1;
+    PWMChannel* mChannelB2;
+
+    Gpio_Pins mSleepPins;
+    Gpio_Pins mFaultPins;
 
     bool mMotorARunning;
     bool mMotorBRunning;
 
     int8_t mMotorASpeed;
     int8_t mMotorBSpeed;
+
+    Error_t mError;
 };
 
 #endif /* DRV8833_H_ */
