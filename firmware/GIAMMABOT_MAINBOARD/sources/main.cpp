@@ -33,17 +33,36 @@
  *            Copyright (C) 2021 GIAMMATeam <http://www.warcomeb.it>
  */
 
+/*!
+ * \mainpage
+ *
+ * \section introduction Introduction
+ * TODO
+ *
+ * \section installation Installation
+ * Simply download the latest archive, and extract the contents into workspace directory.
+ * After that, import the project by using the IDE functionality.
+ *
+ * \section license License
+ * The GIAMMABOT Project is licensed under a MIT License.
+ * See the included <a href="../../license.txt">license.txt</a> for details.
+ * Note that by using this software you agree to the terms of the license.
+ */
+
 #include "hardware.h"
 #include "firmware.h"
 
 #include "board.h"
 #include "application.h"
 
-//#include "wcdli.h"
+#include "wcdli/wcdli.h"
 
 int main (void)
 {
     Board_init();
+
+    // Initialize WC&DLI
+    WCDLI_init(DEBUG_DEVICE);
 
     setup();
 
@@ -51,6 +70,7 @@ int main (void)
     while (1)
     {
         i++;
+        WCDLI_ckeck();
         loop();
     }
 

@@ -42,6 +42,13 @@
 extern "C" {
 #endif
 
+// Project Informations --------------------------------------------------------
+
+#define PROJECT_NAME                             "GiammaBOT"
+#define PROJECT_COPYRIGTH                        "(C) 2021-2022 GIAMMATeam"
+
+// -------------------------------------------------------- Project Informations
+
 // Firmware Version ------------------------------------------------------------
 
 #if !defined(FIRMWARE_VERSION_MAJOR)

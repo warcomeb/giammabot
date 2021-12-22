@@ -40,6 +40,8 @@
 #include "PWMChannel.h"
 #include "DRV8833.h"
 
+#include "Robot.h"
+
 TurnLight Light(TURN_SIGNAL_LX_RED,
                 TURN_SIGNAL_LX_GREEN,
                 TURN_SIGNAL_LX_BLUE,
@@ -53,13 +55,19 @@ PWMChannel MotorDriverLeftCh2(MOTOR_TIMER_DEVICE,MOTOR_LX_CTR2_TIMER_PIN,MOTOR_L
 PWMChannel MotorDriverRigthCh1(MOTOR_TIMER_DEVICE,MOTOR_RX_CTR1_TIMER_PIN,MOTOR_RX_CTR1_TIMER_CHANNEL);
 PWMChannel MotorDriverRigthCh2(MOTOR_TIMER_DEVICE,MOTOR_RX_CTR2_TIMER_PIN,MOTOR_RX_CTR2_TIMER_CHANNEL);
 
-DRV8833    MotorDriver(MotorDriverLeftCh1,MotorDriverLeftCh2,
-                       MotorDriverRigthCh1,MotorDriverRigthCh2);
+DRV8833    MotorDriver(&MotorDriverLeftCh1,&MotorDriverLeftCh2,
+                       &MotorDriverRigthCh1,&MotorDriverRigthCh2);
+
+Robot      GiammaBOT(&MotorDriver,&Light);
 
 void setup (void)
 {
-    Light.init();
-    Light.hazards(true);
+    GiammaBOT.init();
+
+    WCDLI_addAppByParam ("LIGHT",
+                         "Turn Light management",
+                         &Light,
+                         TurnLight_cliWrapper);
 }
 
 void loop (void)

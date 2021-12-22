@@ -36,7 +36,7 @@
 #ifndef FIRMWARE_1_0_X_H
 #define FIRMWARE_1_0_X_H
 
-#define DEBUG_CONSOLE_BAUDRATE                   57600
+#define DEBUG_CONSOLE_BAUDRATE                   115200
 #define WCDLI_MAX_CHARS_PER_LINE                 80
 
 

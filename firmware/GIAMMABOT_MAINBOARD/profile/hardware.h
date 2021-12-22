@@ -83,12 +83,12 @@
 // DEBUG Section ---------------------------------------------------------------
 
 // FIXME: Just for test, define here this macro!
-//#define CONSOLE_DEBUG
+#define CONSOLE_DEBUG
 
 #if defined (CONSOLE_DEBUG)
 #define DEBUG_DEVICE                             OB_UART3
-#define DEBUG_DEVICE_RX                          UART_PINS_PD9
-#define DEBUG_DEVICE_TX                          UART_PINS_PD8
+#define DEBUG_DEVICE_RX                          UART_PINS_PB11_RX
+#define DEBUG_DEVICE_TX                          UART_PINS_PC4
 #endif
 // --------------------------------------------------------------- DEBUG Section
 

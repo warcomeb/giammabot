@@ -72,7 +72,6 @@ static void initUart (void)
         isrTxPriority : 4,
         isrRxPriority : 4,
     };
-
     Uart_init(DEBUG_DEVICE, &uartDebugConfig);
 #endif
 }
