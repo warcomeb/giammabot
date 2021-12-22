@@ -64,9 +64,16 @@ public:
      */
     TurnLight& hazards (bool on);
 
+    TurnLight& left (void);
+    TurnLight& right (void);
+    TurnLight& forward (void);
+    TurnLight& backward (void);
+
     TurnLight& update (void);
 
 private:
+
+    TurnLight& ledOff (void);
 
     Gpio_Pins mLeftRed;
     Gpio_Pins mLeftGreen;
@@ -79,5 +86,9 @@ private:
     bool    mIsHazards;
     uint8_t mHazardsCount;
 };
+
+#include "wcdli/wcdli.h"
+
+void TurnLight_cliWrapper (void* app, int argc, char argv[][WCDLI_BUFFER_SIZE]);
 
 #endif /* TURNLIGHT_H_ */

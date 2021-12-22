@@ -70,12 +70,20 @@ TurnLight& TurnLight::init (void)
 
     this->off();
 
-    this->mIsHazards = false;
-
     return *this;
 }
 
 TurnLight& TurnLight::off (void)
+{
+    // Clear ALL status flag!
+    this->mIsHazards = false;
+
+    this->ledOff();
+
+    return *this;
+}
+
+TurnLight& TurnLight::ledOff (void)
 {
     Gpio_set(this->mLeftRed);
     Gpio_set(this->mLeftGreen);
@@ -100,6 +108,26 @@ TurnLight& TurnLight::hazards (bool on)
         this->mIsHazards = false;
     }
 
+    return *this;
+}
+
+TurnLight& TurnLight::left (void)
+{
+    return *this;
+}
+
+TurnLight& TurnLight::right (void)
+{
+    return *this;
+}
+
+TurnLight& TurnLight::forward (void)
+{
+    return *this;
+}
+
+TurnLight& TurnLight::backward (void)
+{
     return *this;
 }
 
@@ -137,7 +165,7 @@ TurnLight& TurnLight::update (void)
             Gpio_clear(this->mRightBlue);
             break;
         case 6:
-            this->off();
+            this->ledOff();
             break;
         default:
             break;
@@ -148,4 +176,36 @@ TurnLight& TurnLight::update (void)
 
     }
     return *this;
+}
+
+static void printHelp (void)
+{
+
+}
+
+void TurnLight_cliWrapper (void* app, int argc, char argv[][WCDLI_BUFFER_SIZE])
+{
+    TurnLight* dev = (TurnLight*) app;
+
+    if ((argc == 1) || ((argc == 2) && (strcmp(argv[1],"help") == 0)))
+    {
+        printHelp();
+        return;
+    }
+
+    if ((argc == 2) && (strcmp(argv[1],"off") == 0))
+    {
+        dev->off();
+        WCDLI_PRINT_SUCCESS();
+        return;
+    }
+
+    if ((argc == 2) && (strcmp(argv[1],"hazards") == 0))
+    {
+        dev->hazards(true);
+        WCDLI_PRINT_SUCCESS();
+        return;
+    }
+
+    WCDLI_PRINT_WRONG_COMMAND();
 }
