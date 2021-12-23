@@ -101,7 +101,9 @@ static void initTimer (void)
     LowPowerTimer_startCounter(OB_LPTIM1,328);
 
 
-    // Initialize turn-light timer
+    // ------------------------------------------------------------------------
+    // Initiliaze timer to manage turn-light
+    // ------------------------------------------------------------------------
     Timer_Config turnLightTimerConfig =
     {
         mode                : TIMER_MODE_FREE,
@@ -122,6 +124,27 @@ static void initTimer (void)
     };
     Timer_init(TURN_SIGNAL_TIMER_DEVICE,&turnLightTimerConfig);
     Timer_start(TURN_SIGNAL_TIMER_DEVICE);
+
+    // ------------------------------------------------------------------------
+    // Initiliaze timer to manage PWM for motors control
+    // ------------------------------------------------------------------------
+    Timer_Config mMotorPwmTimerConfig =
+    {
+        mode           : TIMER_MODE_PWM,
+
+        timerFrequency : 1000,
+
+        clockSource    : TIMER_CLOCKSOURCE_INTERNAL,
+
+        clockPolarity  : TIMER_CLOCKPOLARITY_RISING,
+        //clockPrescaler : TIMER_CLOCKPRESCALER_1,
+        clockFilter    : 0,
+
+        autoreload     : TRUE,
+
+        counterMode    : TIMER_COUNTERMODE_UP,
+    };
+    Timer_init(MOTOR_TIMER_DEVICE,&mMotorPwmTimerConfig);
 }
 
 static void initGpio (void)

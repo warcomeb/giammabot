@@ -37,8 +37,9 @@
 #define DRV8833_H_
 
 #include "libohiboard.h"
-
 #include "PWMChannel.h"
+
+#include "wcdli/wcdli.h"
 
 class DRV8833
 {
@@ -64,6 +65,8 @@ public:
             Gpio_Pins sleep = GPIO_PINS_NONE,
             Gpio_Pins fault = GPIO_PINS_NONE);
     virtual ~DRV8833();
+
+    DRV8833& init (void);
 
     /*!
      * This function set the speed of the selected motor.
@@ -112,5 +115,7 @@ private:
 
     Error_t mError;
 };
+
+void DRV8833_cliWrapper (void* app, int argc, char argv[][WCDLI_BUFFER_SIZE]);
 
 #endif /* DRV8833_H_ */

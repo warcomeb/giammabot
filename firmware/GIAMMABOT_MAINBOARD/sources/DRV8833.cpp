@@ -33,9 +33,10 @@
  *            Copyright (C) 2021 GIAMMATeam <http://www.warcomeb.it>
  */
 
-#include <DRV8833.h>
+#include "DRV8833.h"
 
 #include "stdlib.h"
+#include "string.h"
 
 DRV8833::DRV8833(PWMChannel* a1,
                  PWMChannel* a2,
@@ -50,13 +51,6 @@ DRV8833::DRV8833(PWMChannel* a1,
     mSleepPins(sleep),
     mFaultPins(fault)
 {
-    // Initialize all PWM channels
-    // The default start-up duty cycle is 0%
-    this->mChannelA1->init();
-    this->mChannelA2->init();
-    this->mChannelB1->init();
-    this->mChannelB2->init();
-
     this->mMotorARunning = false;
     this->mMotorBRunning = false;
 
@@ -64,6 +58,26 @@ DRV8833::DRV8833(PWMChannel* a1,
     this->mMotorBSpeed = 0;
 
     this->mError = DRV8833::NO_ERROR;
+}
+
+DRV8833::~DRV8833()
+{
+    // TODO Auto-generated destructor stub
+}
+
+DRV8833& DRV8833::init (void)
+{
+    // Initialize all PWM channels
+    // The default start-up duty cycle is 0%
+    this->mChannelA1->init();
+    this->mChannelA2->init();
+    this->mChannelB1->init();
+    this->mChannelB2->init();
+
+    this->mChannelA1->start();
+    this->mChannelA2->start();
+    this->mChannelB1->start();
+    this->mChannelB2->start();
 
     if (this->mSleepPins != GPIO_PINS_NONE)
     {
@@ -75,11 +89,6 @@ DRV8833::DRV8833(PWMChannel* a1,
     {
         Gpio_config(this->mFaultPins,GPIO_PINS_INPUT);
     }
-}
-
-DRV8833::~DRV8833()
-{
-    // TODO Auto-generated destructor stub
 }
 
 DRV8833& DRV8833::setSpeed (Motor_t motor, int8_t speed)
@@ -250,4 +259,129 @@ DRV8833& DRV8833::sleep (bool goSleep)
     }
 
     return *this;
+}
+
+static void printHelp (void)
+{
+    WCDLI_helpLine("help","Print this menu");
+
+    WCDLI_helpLine("start [motor]","Start selected motor");
+    WCDLI_helpLine("stop [motor]","Start selected motor");
+}
+
+void DRV8833_cliWrapper (void* app, int argc, char argv[][WCDLI_BUFFER_SIZE])
+{
+    DRV8833* dev = (DRV8833*) app;
+
+    if ((argc == 1) || ((argc == 2) && (strcmp(argv[1],"help") == 0)))
+    {
+        printHelp();
+        return;
+    }
+
+    if ((argc >= 2) && (strcmp(argv[1],"speed") == 0))
+    {
+        if ((argc == 5) && (strcmp(argv[2],"set") == 0))
+        {
+            char* tmp;
+            int8_t speed = strtol(argv[4],&tmp,10);
+            if ((speed > 100) || (speed < -100))
+            {
+                WCDLI_PRINT_WRONG_PARAM();
+                return;
+            }
+
+            if (argv[3][0] == 'A')
+            {
+                dev->setSpeed(DRV8833::MOTOR_A,speed);
+            }
+            else if (argv[3][0] == 'B')
+            {
+                dev->setSpeed(DRV8833::MOTOR_B,speed);
+            }
+            else if (argv[3][0] == 'U')
+            {
+                dev->setSpeed(DRV8833::MOTOR_A,speed);
+                dev->setSpeed(DRV8833::MOTOR_B,speed);
+            }
+            else
+            {
+                WCDLI_PRINT_WRONG_PARAM();
+                return;
+            }
+            WCDLI_PRINT_SUCCESS();
+            return;
+        }
+
+        if ((argc == 4) && (strcmp(argv[2],"get") == 0))
+        {
+            if (argv[3][0] == 'A')
+            {
+
+            }
+            else if (argv[3][0] == 'B')
+            {
+
+            }
+            else if (argv[3][0] == 'U')
+            {
+
+            }
+            else
+            {
+                WCDLI_PRINT_WRONG_PARAM();
+                return;
+            }
+        }
+    }
+
+    if ((argc == 3) && (strcmp(argv[1],"start") == 0))
+    {
+        if (argv[2][0] == 'A')
+        {
+            dev->start(DRV8833::MOTOR_A);
+        }
+        else if (argv[2][0] == 'B')
+        {
+            dev->start(DRV8833::MOTOR_B);
+        }
+        else if (argv[2][0] == 'U')
+        {
+            dev->start(DRV8833::MOTOR_A);
+            dev->start(DRV8833::MOTOR_B);
+        }
+        else
+        {
+            WCDLI_PRINT_WRONG_PARAM();
+            return;
+        }
+        WCDLI_PRINT_SUCCESS();
+        return;
+    }
+
+    if ((argc == 3) && (strcmp(argv[1],"stop") == 0))
+    {
+        if (argv[2][0] == 'A')
+        {
+            dev->start(DRV8833::MOTOR_A);
+        }
+        else if (argv[2][0] == 'B')
+        {
+            dev->start(DRV8833::MOTOR_B);
+        }
+        else if (argv[2][0] == 'U')
+        {
+            dev->start(DRV8833::MOTOR_A);
+            dev->start(DRV8833::MOTOR_B);
+        }
+        else
+        {
+            WCDLI_PRINT_WRONG_PARAM();
+            return;
+        }
+        WCDLI_PRINT_SUCCESS();
+        return;
+    }
+
+    WCDLI_PRINT_WRONG_COMMAND();
 }

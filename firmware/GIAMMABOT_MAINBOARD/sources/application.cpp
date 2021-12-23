@@ -68,6 +68,11 @@ void setup (void)
                          "Turn Light management",
                          &Light,
                          TurnLight_cliWrapper);
+
+    WCDLI_addAppByParam ("MOTOR",
+                         "Motor Driver management",
+                         &MotorDriver,
+                         DRV8833_cliWrapper);
 }
 
 void loop (void)

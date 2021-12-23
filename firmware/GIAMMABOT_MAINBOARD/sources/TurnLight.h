@@ -37,6 +37,8 @@
 #define TURNLIGHT_H_
 
 #include "libohiboard.h"
+#include "wcdli/wcdli.h"
+
 
 class TurnLight
 {
@@ -59,13 +61,12 @@ public:
 
     /*!
      * This function turn on or off the hazards lights.
-     *
-     * \param[in] on: TRUE turn on the lights, FALSE turn off.
      */
-    TurnLight& hazards (bool on);
+    TurnLight& hazards (void);
 
     TurnLight& left (void);
     TurnLight& right (void);
+
     TurnLight& forward (void);
     TurnLight& backward (void);
 
@@ -85,9 +86,14 @@ private:
 
     bool    mIsHazards;
     uint8_t mHazardsCount;
-};
 
-#include "wcdli/wcdli.h"
+    bool    mIsTurnLeft;
+    bool    mIsTurnRight;
+    uint8_t mTurnCount;
+
+    bool    mIsForward;
+    bool    mIsBackward;
+};
 
 void TurnLight_cliWrapper (void* app, int argc, char argv[][WCDLI_BUFFER_SIZE]);
 

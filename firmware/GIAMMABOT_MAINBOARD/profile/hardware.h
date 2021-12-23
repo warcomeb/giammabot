@@ -54,7 +54,7 @@
 #define TURN_SIGNAL_RX_GREEN                     GPIO_PINS_PC0
 #define TURN_SIGNAL_RX_BLUE                      GPIO_PINS_PA15
 
-#define TURN_SIGNAL_TIMER_DEVICE                 OB_TIM16
+#define TURN_SIGNAL_TIMER_DEVICE                 OB_TIM17
 
 // -------------------------------------------------------- TURN SIGNALS Section
 

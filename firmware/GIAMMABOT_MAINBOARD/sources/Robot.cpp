@@ -23,6 +23,7 @@ Robot::~Robot()
 Robot& Robot::init (void)
 {
     mLight->init();
+    mMotor->init();
 
     return *this;
 }
@@ -71,14 +72,14 @@ Robot& Robot::emergency (bool on)
 {
     if (on)
     {
-        mLight->hazards(true);
+        mLight->hazards();
 
         mMotor->stop(DRV8833::MOTOR_A);
         mMotor->stop(DRV8833::MOTOR_B);
     }
     else
     {
-        mLight->hazards(false);
+        mLight->off();
 
         mMotor->start(DRV8833::MOTOR_A);
         mMotor->start(DRV8833::MOTOR_B);

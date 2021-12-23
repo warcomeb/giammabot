@@ -76,7 +76,11 @@ TurnLight& TurnLight::init (void)
 TurnLight& TurnLight::off (void)
 {
     // Clear ALL status flag!
-    this->mIsHazards = false;
+    this->mIsHazards   = false;
+    this->mIsTurnLeft  = false;
+    this->mIsTurnRight = false;
+    this->mIsForward   = false;
+    this->mIsBackward  = false;
 
     this->ledOff();
 
@@ -95,39 +99,67 @@ TurnLight& TurnLight::ledOff (void)
     return *this;
 }
 
-TurnLight& TurnLight::hazards (bool on)
+TurnLight& TurnLight::hazards (void)
 {
-    if (on)
-    {
-        this->mIsHazards = true;
-        this->mHazardsCount = 0;
-        // TODO
-    }
-    else
-    {
-        this->mIsHazards = false;
-    }
+    this->off();
+
+    this->mIsHazards = true;
+    this->mHazardsCount = 0;
 
     return *this;
 }
 
 TurnLight& TurnLight::left (void)
 {
+    this->off();
+
+    this->mIsTurnLeft = true;
+    this->mTurnCount = 0;
+
     return *this;
 }
 
 TurnLight& TurnLight::right (void)
 {
+    this->off();
+
+    this->mIsTurnRight = true;
+    this->mTurnCount = 0;
+
     return *this;
 }
 
 TurnLight& TurnLight::forward (void)
 {
+    this->off();
+
+    Gpio_clear(this->mLeftRed);
+    Gpio_clear(this->mLeftGreen);
+    Gpio_clear(this->mLeftBlue);
+
+    Gpio_clear(this->mRightRed);
+    Gpio_clear(this->mRightGreen);
+    Gpio_clear(this->mRightBlue);
+
+    this->mIsForward = true;
+
     return *this;
 }
 
 TurnLight& TurnLight::backward (void)
 {
+    this->off();
+
+    Gpio_clear(this->mLeftRed);
+    //Gpio_clear(this->mLeftGreen);
+    //Gpio_clear(this->mLeftBlue);
+
+    Gpio_clear(this->mRightRed);
+    //Gpio_clear(this->mRightGreen);
+    //Gpio_clear(this->mRightBlue);
+
+    this->mIsBackward = true;
+
     return *this;
 }
 
@@ -173,14 +205,72 @@ TurnLight& TurnLight::update (void)
 
         this->mHazardsCount++;
         if (this->mHazardsCount == 8) this->mHazardsCount = 0;
-
     }
+    else if (this->mIsTurnLeft)
+    {
+        switch (this->mTurnCount)
+        {
+        case 0:
+            Gpio_clear(this->mLeftRed);
+            Gpio_set(this->mLeftGreen);
+            Gpio_set(this->mLeftBlue);
+            break;
+        case 2:
+            Gpio_set(this->mLeftRed);
+            Gpio_clear(this->mLeftGreen);
+            Gpio_set(this->mLeftBlue);
+            break;
+        case 4:
+            Gpio_set(this->mLeftRed);
+            Gpio_set(this->mLeftGreen);
+            Gpio_clear(this->mLeftBlue);
+            break;
+        case 6:
+            this->ledOff();
+            break;
+        default:
+            break;
+        }
+
+        this->mTurnCount++;
+        if (this->mTurnCount == 8) this->mTurnCount = 0;
+    }
+    else if (this->mIsTurnRight)
+    {
+        switch (this->mTurnCount)
+        {
+        case 0:
+            Gpio_clear(this->mRightRed);
+            Gpio_set(this->mRightGreen);
+            Gpio_set(this->mRightBlue);
+            break;
+        case 2:
+            Gpio_set(this->mRightRed);
+            Gpio_clear(this->mRightGreen);
+            Gpio_set(this->mRightBlue);
+            break;
+        case 4:
+            Gpio_set(this->mRightRed);
+            Gpio_set(this->mRightGreen);
+            Gpio_clear(this->mRightBlue);
+            break;
+        case 6:
+            this->ledOff();
+            break;
+        default:
+            break;
+        }
+
+        this->mTurnCount++;
+        if (this->mTurnCount == 8) this->mTurnCount = 0;
+    }
+
     return *this;
 }
 
 static void printHelp (void)
 {
-
+    WCDLI_helpLine("help","Print this menu");
 }
 
 void TurnLight_cliWrapper (void* app, int argc, char argv[][WCDLI_BUFFER_SIZE])
@@ -202,7 +292,35 @@ void TurnLight_cliWrapper (void* app, int argc, char argv[][WCDLI_BUFFER_SIZE])
 
     if ((argc == 2) && (strcmp(argv[1],"hazards") == 0))
     {
-        dev->hazards(true);
+        dev->hazards();
+        WCDLI_PRINT_SUCCESS();
+        return;
+    }
+
+    if ((argc == 2) && (strcmp(argv[1],"forward") == 0))
+    {
+        dev->forward();
+        WCDLI_PRINT_SUCCESS();
+        return;
+    }
+
+    if ((argc == 2) && (strcmp(argv[1],"backward") == 0))
+    {
+        dev->backward();
+        WCDLI_PRINT_SUCCESS();
+        return;
+    }
+
+    if ((argc == 2) && (strcmp(argv[1],"left") == 0))
+    {
+        dev->left();
+        WCDLI_PRINT_SUCCESS();
+        return;
+    }
+
+    if ((argc == 2) && (strcmp(argv[1],"right") == 0))
+    {
+        dev->right();
         WCDLI_PRINT_SUCCESS();
         return;
     }
