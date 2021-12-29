@@ -89,6 +89,8 @@ DRV8833& DRV8833::init (void)
     {
         Gpio_config(this->mFaultPins,GPIO_PINS_INPUT);
     }
+
+    return *this;
 }
 
 DRV8833& DRV8833::setSpeed (Motor_t motor, int8_t speed)
@@ -265,13 +267,19 @@ static void printHelp (void)
 {
     WCDLI_helpLine("help","Print this menu");
 
+    WCDLI_helpLine("speed set [motor] [value]","Set speed to selected motor");
+    WCDLI_helpLine("speed get [motor]","Get speed of selected motor");
+
     WCDLI_helpLine("start [motor]","Start selected motor");
     WCDLI_helpLine("stop [motor]","Start selected motor");
+
+    WCDLI_helpLine("status","Print motors status");
 }
 
 void DRV8833_cliWrapper (void* app, int argc, char argv[][WCDLI_BUFFER_SIZE])
 {
     DRV8833* dev = (DRV8833*) app;
+    char output[WCDLI_MAX_CHARS_PER_LINE] = {0};
 
     if ((argc == 1) || ((argc == 2) && (strcmp(argv[1],"help") == 0)))
     {
@@ -317,15 +325,25 @@ void DRV8833_cliWrapper (void* app, int argc, char argv[][WCDLI_BUFFER_SIZE])
         {
             if (argv[3][0] == 'A')
             {
-
+                sprintf(output, "Motor A:  %d %%",dev->speed(DRV8833::MOTOR_A));
+                WCDLI_debug(WCDLI_MESSAGELEVEL_NONE,output);
+                return;
             }
             else if (argv[3][0] == 'B')
             {
-
+                sprintf(output, "Motor B:  %d %%",dev->speed(DRV8833::MOTOR_B));
+                WCDLI_debug(WCDLI_MESSAGELEVEL_NONE,output);
+                return;
             }
             else if (argv[3][0] == 'U')
             {
+                sprintf(output, "Motor A:  %d %%",dev->speed(DRV8833::MOTOR_A));
+                WCDLI_debug(WCDLI_MESSAGELEVEL_NONE,output);
+                memset(output, 0, sizeof(output));
 
+                sprintf(output, "Motor B:  %d %%",dev->speed(DRV8833::MOTOR_B));
+                WCDLI_debug(WCDLI_MESSAGELEVEL_NONE,output);
+                return;
             }
             else
             {
@@ -333,6 +351,9 @@ void DRV8833_cliWrapper (void* app, int argc, char argv[][WCDLI_BUFFER_SIZE])
                 return;
             }
         }
+
+        WCDLI_PRINT_WRONG_COMMAND();
+        return;
     }
 
     if ((argc == 3) && (strcmp(argv[1],"start") == 0))
@@ -363,16 +384,16 @@ void DRV8833_cliWrapper (void* app, int argc, char argv[][WCDLI_BUFFER_SIZE])
     {
         if (argv[2][0] == 'A')
         {
-            dev->start(DRV8833::MOTOR_A);
+            dev->stop(DRV8833::MOTOR_A);
         }
         else if (argv[2][0] == 'B')
         {
-            dev->start(DRV8833::MOTOR_B);
+            dev->stop(DRV8833::MOTOR_B);
         }
         else if (argv[2][0] == 'U')
         {
-            dev->start(DRV8833::MOTOR_A);
-            dev->start(DRV8833::MOTOR_B);
+            dev->stop(DRV8833::MOTOR_A);
+            dev->stop(DRV8833::MOTOR_B);
         }
         else
         {
