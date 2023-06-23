@@ -32,4 +32,5 @@
   (lib (name nowae-transistor)(type Legacy)(uri ${KINOWAELIB}/nowae-transistor.lib)(options "")(descr ""))
   (lib (name nowae-wireless)(type Legacy)(uri ${KINOWAELIB}/nowae-wireless.lib)(options "")(descr ""))
   (lib (name power)(type Legacy)(uri ${KINOWAELIB}/power.lib)(options "")(descr ""))
+  (lib (name gb-mainboard-rescue)(type Legacy)(uri ${KIPRJMOD}/gb-mainboard-rescue.lib)(options "")(descr ""))
 )
