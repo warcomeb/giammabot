@@ -1,0 +1,361 @@
+EESchema Schematic File Version 4
+EELAYER 30 0
+EELAYER END
+$Descr A4 11693 8268
+encoding utf-8
+Sheet 1 7
+Title "GiammaBOT - Mainboard"
+Date "2021-03-21"
+Rev "1"
+Comp ""
+Comment1 "M. Giammarini"
+Comment2 "N. Orlandini"
+Comment3 "M. Giammarini"
+Comment4 ""
+$EndDescr
+$Comp
+L nowae-connector:CONN_20X2 P?
+U 1 1 605151AD
+P 4550 3825
+F 0 "P?" H 4550 5122 60  0000 C CNN
+F 1 "NUCLEO-CN7" H 4550 5016 60  0000 C CNN
+F 2 "CONNECTOR:SOCKET_20x2_2.54-WE-61304021821" H 4825 4275 60  0001 C CNN
+F 3 "" H 4825 4275 60  0001 C CNN
+F 4 "-" H 4550 3475 60  0001 C CNN "Manufacturer"
+F 5 "-" H 4550 3375 60  0001 C CNN "Part Number"
+F 6 "-" H 4550 3275 60  0001 C CNN "Distributor"
+F 7 "-" H 4550 3175 60  0001 C CNN "Distributor Code"
+F 8 "-" H 4550 3075 60  0001 C CNN "Price €"
+F 9 "-" H 4550 2975 60  0001 C CNN "Distributor2"
+F 10 "-" H 4550 2875 60  0001 C CNN "Distributor2 Code"
+F 11 "-" H 4550 2775 60  0001 C CNN "Distributor3"
+F 12 "-" H 4550 2675 60  0001 C CNN "Distributor3 Code"
+	1    4550 3825
+	1    0    0    -1  
+$EndComp
+$Comp
+L nowae-connector:CONN_20X2 P?
+U 1 1 60517752
+P 6400 3825
+F 0 "P?" H 6400 5122 60  0000 C CNN
+F 1 "NUCLEO-CN10" H 6400 5016 60  0000 C CNN
+F 2 "CONNECTOR:SOCKET_20x2_2.54-WE-61304021821" H 6675 4275 60  0001 C CNN
+F 3 "" H 6675 4275 60  0001 C CNN
+F 4 "-" H 6400 3475 60  0001 C CNN "Manufacturer"
+F 5 "-" H 6400 3375 60  0001 C CNN "Part Number"
+F 6 "-" H 6400 3275 60  0001 C CNN "Distributor"
+F 7 "-" H 6400 3175 60  0001 C CNN "Distributor Code"
+F 8 "-" H 6400 3075 60  0001 C CNN "Price €"
+F 9 "-" H 6400 2975 60  0001 C CNN "Distributor2"
+F 10 "-" H 6400 2875 60  0001 C CNN "Distributor2 Code"
+F 11 "-" H 6400 2775 60  0001 C CNN "Distributor3"
+F 12 "-" H 6400 2675 60  0001 C CNN "Distributor3 Code"
+	1    6400 3825
+	1    0    0    -1  
+$EndComp
+NoConn ~ 4450 4675
+NoConn ~ 4750 4675
+NoConn ~ 6250 4675
+NoConn ~ 6550 4675
+Wire Wire Line
+	6550 4375 7300 4375
+Text Label 7300 3575 2    50   ~ 0
+UART_DBG_RX
+Wire Wire Line
+	7300 3575 6550 3575
+Text Label 5500 3875 0    50   ~ 0
+MOTOR_SX_CTR1
+Text Label 5500 3775 0    50   ~ 0
+MOTOR_SX_CTR2
+Wire Wire Line
+	6250 3875 5500 3875
+Wire Wire Line
+	5500 3775 6250 3775
+Text Label 5500 4375 0    50   ~ 0
+MOTOR_DX_CTR1
+Wire Wire Line
+	6250 4375 5500 4375
+Text Label 7300 3375 2    50   ~ 0
+MOTOR_DX_CTR2
+Wire Wire Line
+	7300 3375 6550 3375
+Wire Wire Line
+	4700 3875 4950 3875
+$Comp
+L power:+VIN #PWR?
+U 1 1 60666068
+P 4950 3875
+F 0 "#PWR?" H 4950 3800 30  0001 C CNN
+F 1 "+VIN" H 4950 3975 39  0000 C CNN
+F 2 "" H 4950 3875 60  0000 C CNN
+F 3 "" H 4950 3875 60  0000 C CNN
+	1    4950 3875
+	0    1    1    0   
+$EndComp
+Wire Wire Line
+	4700 3775 4850 3775
+Wire Wire Line
+	4850 3775 4850 3675
+Wire Wire Line
+	4850 3675 4700 3675
+Wire Wire Line
+	4850 3675 5000 3675
+Connection ~ 4850 3675
+$Comp
+L power:GND #PWR?
+U 1 1 60671541
+P 5000 3675
+F 0 "#PWR?" H 5000 3675 30  0001 C CNN
+F 1 "GND" H 5000 3675 30  0001 C CNN
+F 2 "" H 5000 3675 60  0000 C CNN
+F 3 "" H 5000 3675 60  0000 C CNN
+	1    5000 3675
+	0    -1   -1   0   
+$EndComp
+Wire Wire Line
+	4700 3575 4950 3575
+Wire Wire Line
+	4700 3475 4850 3475
+NoConn ~ 4400 3175
+NoConn ~ 4400 3275
+NoConn ~ 4700 3175
+NoConn ~ 4700 3975
+NoConn ~ 6550 4575
+NoConn ~ 6550 4475
+NoConn ~ 6550 3175
+Text Label 5500 3975 0    50   ~ 0
+UART_CMD_RX
+Wire Wire Line
+	5500 3975 6250 3975
+Text Label 5500 3575 0    50   ~ 0
+UART_CMD_TX
+Wire Wire Line
+	5500 3575 6250 3575
+$Comp
+L power:+5V #PWR?
+U 1 1 605C7743
+P 4950 3575
+F 0 "#PWR?" H 4950 3500 30  0001 C CNN
+F 1 "+5V" H 4950 3685 39  0000 C CNN
+F 2 "" H 4950 3575 60  0000 C CNN
+F 3 "" H 4950 3575 60  0000 C CNN
+	1    4950 3575
+	0    1    1    0   
+$EndComp
+$Comp
+L power:+3.3V #PWR?
+U 1 1 605C86A5
+P 4850 3475
+F 0 "#PWR?" H 4850 3400 30  0001 C CNN
+F 1 "+3.3V" H 4850 3585 39  0000 C CNN
+F 2 "" H 4850 3475 60  0000 C CNN
+F 3 "" H 4850 3475 60  0000 C CNN
+	1    4850 3475
+	0    1    1    0   
+$EndComp
+Wire Wire Line
+	4700 4375 5450 4375
+Text Label 5450 4375 2    50   ~ 0
+ADC_BAT_STATUS
+Wire Wire Line
+	7300 2775 6550 2775
+Text Label 7300 2775 2    50   ~ 0
+ESP2MCU_01
+Wire Wire Line
+	7300 2875 6550 2875
+Text Label 7300 2875 2    50   ~ 0
+ESP2MCU_02
+Wire Wire Line
+	7300 2975 6550 2975
+Text Label 5500 2775 0    50   ~ 0
+ESP2MCU_03
+Wire Wire Line
+	5500 2775 6250 2775
+Text Label 7300 2975 2    50   ~ 0
+ESP2MCU_04
+Wire Wire Line
+	4700 2775 5450 2775
+Wire Wire Line
+	4700 2875 5450 2875
+Wire Wire Line
+	4400 2775 3650 2775
+Text Label 5450 2775 2    50   ~ 0
+LED_LX_RED
+Text Label 5450 2875 2    50   ~ 0
+LED_LX_GREEN
+Text Label 3650 2775 0    50   ~ 0
+LED_LX_BLUE
+Wire Wire Line
+	3650 3375 4400 3375
+Wire Wire Line
+	3650 3475 4400 3475
+Text Label 3650 3375 0    50   ~ 0
+LED_RX_RED
+Text Label 3650 3475 0    50   ~ 0
+LED_RX_GREEN
+Wire Wire Line
+	3650 3575 4400 3575
+Text Label 3650 3575 0    50   ~ 0
+LED_RX_BLUE
+Text Label 7300 4375 2    50   ~ 0
+UART_DBG_TX
+Text Notes 6150 4375 0    28   ~ 0
+PA10
+Text Notes 6150 3975 0    28   ~ 0
+PB10
+Text Notes 6150 3875 0    28   ~ 0
+PA8
+Text Notes 6150 3775 0    28   ~ 0
+PA9
+Text Notes 6150 3575 0    28   ~ 0
+PB6
+Text Notes 6150 2775 0    28   ~ 0
+PC9
+Text Notes 6550 4375 0    28   ~ 0
+PC4
+Text Notes 6550 3575 0    28   ~ 0
+PB11
+Text Notes 6550 3375 0    28   ~ 0
+PA11
+Text Notes 6550 2975 0    28   ~ 0
+PC5
+Text Notes 6550 2875 0    28   ~ 0
+PC6
+Text Notes 6550 2775 0    28   ~ 0
+PC8
+Wire Wire Line
+	4700 3075 5000 3075
+$Comp
+L power:GND #PWR?
+U 1 1 607DD7F7
+P 5000 3075
+F 0 "#PWR?" H 5000 3075 30  0001 C CNN
+F 1 "GND" H 5000 3075 30  0001 C CNN
+F 2 "" H 5000 3075 60  0000 C CNN
+F 3 "" H 5000 3075 60  0000 C CNN
+	1    5000 3075
+	0    -1   -1   0   
+$EndComp
+Wire Wire Line
+	4400 3675 4100 3675
+$Comp
+L power:GND #PWR?
+U 1 1 60803CE4
+P 4100 3675
+F 0 "#PWR?" H 4100 3675 30  0001 C CNN
+F 1 "GND" H 4100 3675 30  0001 C CNN
+F 2 "" H 4100 3675 60  0000 C CNN
+F 3 "" H 4100 3675 60  0000 C CNN
+	1    4100 3675
+	0    1    1    0   
+$EndComp
+Wire Wire Line
+	6550 3675 6850 3675
+$Comp
+L power:GND #PWR?
+U 1 1 60818287
+P 6850 3675
+F 0 "#PWR?" H 6850 3675 30  0001 C CNN
+F 1 "GND" H 6850 3675 30  0001 C CNN
+F 2 "" H 6850 3675 60  0000 C CNN
+F 3 "" H 6850 3675 60  0000 C CNN
+	1    6850 3675
+	0    -1   -1   0   
+$EndComp
+Wire Wire Line
+	6250 3175 5950 3175
+$Comp
+L power:GND #PWR?
+U 1 1 6082DB85
+P 5950 3175
+F 0 "#PWR?" H 5950 3175 30  0001 C CNN
+F 1 "GND" H 5950 3175 30  0001 C CNN
+F 2 "" H 5950 3175 60  0000 C CNN
+F 3 "" H 5950 3175 60  0000 C CNN
+	1    5950 3175
+	0    1    1    0   
+$EndComp
+Wire Wire Line
+	6550 4275 6750 4275
+$Comp
+L power:GND #PWR?
+U 1 1 6071CC37
+P 6750 4275
+F 0 "#PWR?" H 6750 4275 30  0001 C CNN
+F 1 "GND" H 6750 4275 30  0001 C CNN
+F 2 "" H 6750 4275 60  0000 C CNN
+F 3 "" H 6750 4275 60  0000 C CNN
+	1    6750 4275
+	0    -1   -1   0   
+$EndComp
+$Comp
+L nowae-misc:JUMPER-2_1 J?
+U 1 1 60744ABC
+P 7150 4175
+F 0 "J?" H 7000 4225 50  0000 C CNN
+F 1 "JUMPER-2_1" H 7150 4275 39  0001 C CNN
+F 2 "MISC:JUMPERSMD-2-0805" H 7050 4175 60  0001 C CNN
+F 3 "" H 7150 4275 60  0001 C CNN
+	1    7150 4175
+	1    0    0    -1  
+$EndComp
+$Comp
+L nowae-misc:JUMPER-2_1 J?
+U 1 1 60746687
+P 7150 4075
+F 0 "J?" H 7000 4125 50  0000 C CNN
+F 1 "JUMPER-2_1" H 7150 4175 39  0001 C CNN
+F 2 "MISC:JUMPERSMD-2-0805" H 7050 4075 60  0001 C CNN
+F 3 "" H 7150 4175 60  0001 C CNN
+	1    7150 4075
+	1    0    0    -1  
+$EndComp
+$Comp
+L nowae-misc:JUMPER-2_1 J?
+U 1 1 60746B88
+P 7150 3975
+F 0 "J?" H 7000 4025 50  0000 C CNN
+F 1 "JUMPER-2_1" H 7150 4075 39  0001 C CNN
+F 2 "MISC:JUMPERSMD-2-0805" H 7050 3975 60  0001 C CNN
+F 3 "" H 7150 4075 60  0001 C CNN
+	1    7150 3975
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	7050 3975 6550 3975
+Wire Wire Line
+	6550 4075 7050 4075
+Wire Wire Line
+	6550 4175 7050 4175
+Wire Wire Line
+	7250 3975 7300 3975
+Wire Wire Line
+	7250 4075 7300 4075
+Wire Wire Line
+	7300 4075 7300 3975
+Wire Wire Line
+	7300 3975 7300 3875
+Connection ~ 7300 3975
+Wire Wire Line
+	7250 4175 7300 4175
+Wire Wire Line
+	7300 4175 7300 4075
+Connection ~ 7300 4075
+$Comp
+L power:GND #PWR?
+U 1 1 607D505F
+P 7300 3875
+F 0 "#PWR?" H 7300 3875 30  0001 C CNN
+F 1 "GND" H 7300 3875 30  0001 C CNN
+F 2 "" H 7300 3875 60  0000 C CNN
+F 3 "" H 7300 3875 60  0000 C CNN
+	1    7300 3875
+	-1   0    0    1   
+$EndComp
+Text Label 6600 4075 0    50   ~ 0
+ADDR_1
+Text Label 6600 3975 0    50   ~ 0
+ADDR_0
+Text Label 6600 4175 0    50   ~ 0
+ADDR_2
+$EndSCHEMATC

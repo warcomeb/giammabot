@@ -1,0 +1,769 @@
+EESchema Schematic File Version 4
+EELAYER 30 0
+EELAYER END
+$Descr A4 11693 8268
+encoding utf-8
+Sheet 3 7
+Title ""
+Date ""
+Rev ""
+Comp ""
+Comment1 ""
+Comment2 ""
+Comment3 ""
+Comment4 ""
+$EndDescr
+$Comp
+L nowae-batterycharger:STBC08PMR U103
+U 1 1 605570CB
+P 5575 2475
+F 0 "U103" H 5575 3025 50  0000 C CNN
+F 1 "STBC08PMR" H 5575 2925 50  0000 C CNN
+F 2 "DFN:DFN6_3.0x3.0_1.0" H 5575 1275 60  0001 C CNN
+F 3 "https://www.st.com/resource/en/datasheet/stbc08.pdf" H 5575 1875 60  0001 C CNN
+F 4 "STMicroelectronics" H 5575 1775 60  0001 C CNN "Manufacturer"
+F 5 "STBC08PMR" H 5575 1675 60  0001 C CNN "Part Number"
+F 6 "Farnell Italia S.r.l." H 5575 1575 60  0001 C CNN "Distributor"
+F 7 "2762712" H 5575 1475 60  0001 C CNN "Distributor Code"
+F 8 "1.08" H 5575 1375 60  0001 C CNN "Price €"
+	1    5575 2475
+	1    0    0    -1  
+$EndComp
+$Comp
+L nowae-connector:CONN_2X1 P106
+U 1 1 6055B897
+P 6975 2225
+F 0 "P106" H 7053 2276 50  0000 L CNN
+F 1 "BATTERY" H 7053 2185 50  0000 L CNN
+F 2 "CONNECTOR_MPT:CONN-MPT0.5_2-2.54" H 7350 2225 60  0001 C CNN
+F 3 "" H 7350 2225 60  0001 C CNN
+F 4 "-" H 6975 1875 60  0001 C CNN "Manufacturer"
+F 5 "-" H 6975 1775 60  0001 C CNN "Part Number"
+F 6 "-" H 6975 1675 60  0001 C CNN "Distributor"
+F 7 "-" H 6975 1575 60  0001 C CNN "Distributor Code"
+F 8 "-" H 6975 1475 60  0001 C CNN "Price €"
+F 9 "-" H 6975 1375 60  0001 C CNN "Distributor2"
+F 10 "-" H 6975 1275 60  0001 C CNN "Distributor2 Code"
+F 11 "-" H 6975 1175 60  0001 C CNN "Distributor3"
+F 12 "-" H 6975 1075 60  0001 C CNN "Distributor3 Code"
+	1    6975 2225
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	5975 2175 6475 2175
+$Comp
+L nowae-capacitor:CAPACITOR C103
+U 1 1 60573D04
+P 3525 2475
+F 0 "C103" H 3640 2521 50  0000 L CNN
+F 1 "4u7" H 3640 2430 50  0000 L CNN
+F 2 "CAPACITOR:CAPACITOR-1206" H 3563 2325 30  0001 C CNN
+F 3 "" H 3525 2575 60  0001 C CNN
+F 4 "-" H 3640 2384 30  0001 L CNN "Parameters"
+F 5 "-" H 3525 2125 60  0001 C CNN "Manufacturer"
+F 6 "-" H 3525 2025 60  0001 C CNN "Part Number"
+F 7 "-" H 3525 1925 60  0001 C CNN "Distributor"
+F 8 "-" H 3525 1825 60  0001 C CNN "Distributor Code"
+F 9 "-" H 3525 1725 60  0001 C CNN "Price €"
+F 10 "-" H 3525 1625 60  0001 C CNN "Distributor2"
+F 11 "-" H 3525 1525 60  0001 C CNN "Distributor2 Code"
+F 12 "-" H 3525 1425 60  0001 C CNN "Distributor3"
+F 13 "-" H 3525 1325 60  0001 C CNN "Distributor3 Code"
+	1    3525 2475
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	3525 2325 3525 2175
+$Comp
+L nowae-led:RED DL101
+U 1 1 6059C51B
+P 4675 2475
+F 0 "DL101" H 4725 2575 50  0000 C CNN
+F 1 "RED" H 4675 2675 50  0000 C CNN
+F 2 "LEDs:LED-0805" H 4675 2475 60  0001 C CNN
+F 3 "Red" H 4675 2475 60  0001 C CNN
+F 4 "-" H 4675 2125 60  0001 C CNN "Manufacturer"
+F 5 "-" H 4675 2025 60  0001 C CNN "Part Number"
+F 6 "-" H 4675 1925 60  0001 C CNN "Distributor"
+F 7 "-" H 4675 1825 60  0001 C CNN "Distributor Code"
+F 8 "-" H 4675 1725 60  0001 C CNN "Price €"
+F 9 "-" H 4675 1625 60  0001 C CNN "Distributor2"
+F 10 "-" H 4675 1525 60  0001 C CNN "Distributor2 Code"
+F 11 "-" H 4675 1425 60  0001 C CNN "Distributor3"
+F 12 "-" H 4675 1325 60  0001 C CNN "Distributor3 Code"
+	1    4675 2475
+	1    0    0    -1  
+$EndComp
+$Comp
+L nowae-led:RED DL102
+U 1 1 6059D0F6
+P 4925 2575
+F 0 "DL102" H 4725 2525 50  0000 C CNN
+F 1 "RED" H 4675 2425 50  0000 C CNN
+F 2 "LEDs:LED-0805" H 4925 2575 60  0001 C CNN
+F 3 "Red" H 4925 2575 60  0001 C CNN
+F 4 "-" H 4925 2225 60  0001 C CNN "Manufacturer"
+F 5 "-" H 4925 2125 60  0001 C CNN "Part Number"
+F 6 "-" H 4925 2025 60  0001 C CNN "Distributor"
+F 7 "-" H 4925 1925 60  0001 C CNN "Distributor Code"
+F 8 "-" H 4925 1825 60  0001 C CNN "Price €"
+F 9 "-" H 4925 1725 60  0001 C CNN "Distributor2"
+F 10 "-" H 4925 1625 60  0001 C CNN "Distributor2 Code"
+F 11 "-" H 4925 1525 60  0001 C CNN "Distributor3"
+F 12 "-" H 4925 1425 60  0001 C CNN "Distributor3 Code"
+	1    4925 2575
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	3525 2625 3525 2775
+$Comp
+L nowae-resistor:RESISTOR R101
+U 1 1 605A7549
+P 4225 2475
+F 0 "R101" H 4475 2525 50  0000 C CNN
+F 1 "270" H 4225 2475 50  0000 C CNN
+F 2 "RESISTOR:RESISTOR-0805" H 4225 2405 30  0001 C CNN
+F 3 "" V 4225 2475 30  0001 C CNN
+F 4 "-" H 4225 2375 60  0001 C CNN "Manufacturer"
+F 5 "-" H 4225 2275 60  0001 C CNN "Part Number"
+F 6 "-" H 4225 2175 60  0001 C CNN "Distributor"
+F 7 "-" H 4225 2075 60  0001 C CNN "Distributor Code"
+F 8 "-" H 4225 1975 60  0001 C CNN "Price €"
+F 9 "-" H 4225 1875 60  0001 C CNN "Distributor2"
+F 10 "-" H 4225 1775 60  0001 C CNN "Distributor2 Code"
+F 11 "-" H 4225 1675 60  0001 C CNN "Distributor3"
+F 12 "-" H 4225 1575 60  0001 C CNN "Distributor3 Code"
+	1    4225 2475
+	1    0    0    -1  
+$EndComp
+$Comp
+L nowae-resistor:RESISTOR R102
+U 1 1 605AC96E
+P 4225 2575
+F 0 "R102" H 4475 2625 50  0000 C CNN
+F 1 "270" H 4225 2575 50  0000 C CNN
+F 2 "RESISTOR:RESISTOR-0805" H 4225 2505 30  0001 C CNN
+F 3 "" V 4225 2575 30  0001 C CNN
+F 4 "-" H 4225 2475 60  0001 C CNN "Manufacturer"
+F 5 "-" H 4225 2375 60  0001 C CNN "Part Number"
+F 6 "-" H 4225 2275 60  0001 C CNN "Distributor"
+F 7 "-" H 4225 2175 60  0001 C CNN "Distributor Code"
+F 8 "-" H 4225 2075 60  0001 C CNN "Price €"
+F 9 "-" H 4225 1975 60  0001 C CNN "Distributor2"
+F 10 "-" H 4225 1875 60  0001 C CNN "Distributor2 Code"
+F 11 "-" H 4225 1775 60  0001 C CNN "Distributor3"
+F 12 "-" H 4225 1675 60  0001 C CNN "Distributor3 Code"
+	1    4225 2575
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	4775 2575 4475 2575
+Wire Wire Line
+	4475 2475 4525 2475
+Wire Wire Line
+	3975 2575 3875 2575
+Wire Wire Line
+	3875 2575 3875 2475
+Wire Wire Line
+	3875 2175 5175 2175
+Wire Wire Line
+	3975 2475 3875 2475
+Connection ~ 3875 2475
+Wire Wire Line
+	3875 2475 3875 2175
+Wire Wire Line
+	3875 2175 3525 2175
+Connection ~ 3875 2175
+Connection ~ 3525 2175
+Wire Wire Line
+	3525 2775 5175 2775
+Connection ~ 3525 2775
+Wire Wire Line
+	3525 2775 3525 3025
+Wire Wire Line
+	4825 2475 5175 2475
+Wire Wire Line
+	5075 2575 5175 2575
+$Comp
+L power:GND #PWR0101
+U 1 1 605BAB46
+P 650 3450
+F 0 "#PWR0101" H 650 3450 30  0001 C CNN
+F 1 "GND" H 650 3450 30  0001 C CNN
+F 2 "" H 650 3450 60  0000 C CNN
+F 3 "" H 650 3450 60  0000 C CNN
+	1    650  3450
+	0    1    1    0   
+$EndComp
+Wire Wire Line
+	3175 2625 3175 2775
+Wire Wire Line
+	3175 2775 3525 2775
+Wire Wire Line
+	3175 2325 3175 2175
+Wire Wire Line
+	3175 2175 3525 2175
+Connection ~ 3175 2175
+$Comp
+L nowae-resistor:RESISTOR R103
+U 1 1 605D126B
+P 6225 2625
+F 0 "R103" H 6225 2725 50  0000 C CNN
+F 1 "TBD" H 6225 2625 50  0000 C CNN
+F 2 "RESISTOR:RESISTOR-0805" H 6225 2555 30  0001 C CNN
+F 3 "" V 6225 2625 30  0001 C CNN
+F 4 "-" H 6225 2525 60  0001 C CNN "Manufacturer"
+F 5 "-" H 6225 2425 60  0001 C CNN "Part Number"
+F 6 "-" H 6225 2325 60  0001 C CNN "Distributor"
+F 7 "-" H 6225 2225 60  0001 C CNN "Distributor Code"
+F 8 "-" H 6225 2125 60  0001 C CNN "Price €"
+F 9 "-" H 6225 2025 60  0001 C CNN "Distributor2"
+F 10 "-" H 6225 1925 60  0001 C CNN "Distributor2 Code"
+F 11 "-" H 6225 1825 60  0001 C CNN "Distributor3"
+F 12 "-" H 6225 1725 60  0001 C CNN "Distributor3 Code"
+	1    6225 2625
+	0    1    1    0   
+$EndComp
+Wire Wire Line
+	5975 2325 6225 2325
+Wire Wire Line
+	6225 2325 6225 2375
+Wire Wire Line
+	5975 2775 6075 2775
+Wire Wire Line
+	6075 2775 6075 3025
+Wire Wire Line
+	6075 3025 6225 3025
+Wire Wire Line
+	6225 3025 6225 2875
+Wire Wire Line
+	6075 3025 3525 3025
+Connection ~ 6075 3025
+Wire Wire Line
+	3525 3025 3525 3075
+Connection ~ 3525 3025
+Wire Wire Line
+	3175 2125 3175 2175
+$Comp
+L nowae-capacitor:CAPACITOR C105
+U 1 1 605546F4
+P 6475 2625
+F 0 "C105" H 6590 2671 50  0000 L CNN
+F 1 "4u7" H 6590 2580 50  0000 L CNN
+F 2 "CAPACITOR:CAPACITOR-1206" H 6513 2475 30  0001 C CNN
+F 3 "" H 6475 2725 60  0001 C CNN
+F 4 "-" H 6590 2534 30  0001 L CNN "Parameters"
+F 5 "-" H 6475 2275 60  0001 C CNN "Manufacturer"
+F 6 "-" H 6475 2175 60  0001 C CNN "Part Number"
+F 7 "-" H 6475 2075 60  0001 C CNN "Distributor"
+F 8 "-" H 6475 1975 60  0001 C CNN "Distributor Code"
+F 9 "-" H 6475 1875 60  0001 C CNN "Price €"
+F 10 "-" H 6475 1775 60  0001 C CNN "Distributor2"
+F 11 "-" H 6475 1675 60  0001 C CNN "Distributor2 Code"
+F 12 "-" H 6475 1575 60  0001 C CNN "Distributor3"
+F 13 "-" H 6475 1475 60  0001 C CNN "Distributor3 Code"
+	1    6475 2625
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	6475 2475 6475 2175
+Connection ~ 6475 2175
+Wire Wire Line
+	6475 2175 6825 2175
+Wire Wire Line
+	6225 3025 6475 3025
+Wire Wire Line
+	6475 3025 6475 2775
+Connection ~ 6225 3025
+$Comp
+L power:+VBAT #PWR0109
+U 1 1 605626AE
+P 6475 2125
+F 0 "#PWR0109" H 6475 2050 30  0001 C CNN
+F 1 "+VBAT" H 6475 2235 40  0000 C CNN
+F 2 "" H 6475 2125 60  0000 C CNN
+F 3 "" H 6475 2125 60  0000 C CNN
+	1    6475 2125
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	6475 2175 6475 2125
+Wire Wire Line
+	6825 2275 6775 2275
+Wire Wire Line
+	6775 2275 6775 3025
+Wire Wire Line
+	6775 3025 6475 3025
+Connection ~ 6475 3025
+$Comp
+L nowae-resistor:RESISTOR R104
+U 1 1 605728F6
+P 5225 4175
+F 0 "R104" H 5225 4275 50  0000 C CNN
+F 1 "10k" H 5225 4175 50  0000 C CNN
+F 2 "RESISTOR:RESISTOR-0805" H 5225 4105 30  0001 C CNN
+F 3 "" V 5225 4175 30  0001 C CNN
+F 4 "-" H 5225 4075 60  0001 C CNN "Manufacturer"
+F 5 "-" H 5225 3975 60  0001 C CNN "Part Number"
+F 6 "-" H 5225 3875 60  0001 C CNN "Distributor"
+F 7 "-" H 5225 3775 60  0001 C CNN "Distributor Code"
+F 8 "-" H 5225 3675 60  0001 C CNN "Price €"
+F 9 "-" H 5225 3575 60  0001 C CNN "Distributor2"
+F 10 "-" H 5225 3475 60  0001 C CNN "Distributor2 Code"
+F 11 "-" H 5225 3375 60  0001 C CNN "Distributor3"
+F 12 "-" H 5225 3275 60  0001 C CNN "Distributor3 Code"
+	1    5225 4175
+	0    1    1    0   
+$EndComp
+Wire Wire Line
+	5225 3925 5225 3875
+Wire Wire Line
+	5025 3525 4825 3525
+$Comp
+L power:+VBAT #PWR0105
+U 1 1 60582461
+P 4825 3525
+F 0 "#PWR0105" H 4825 3450 30  0001 C CNN
+F 1 "+VBAT" H 4825 3645 40  0000 C CNN
+F 2 "" H 4825 3525 60  0000 C CNN
+F 3 "" H 4825 3525 60  0000 C CNN
+	1    4825 3525
+	0    -1   -1   0   
+$EndComp
+Wire Wire Line
+	5225 3875 4825 3875
+Connection ~ 5225 3875
+Wire Wire Line
+	5225 3875 5225 3825
+$Comp
+L power:+VUSB #PWR0106
+U 1 1 6058BFAD
+P 4825 3875
+F 0 "#PWR0106" H 4825 3800 30  0001 C CNN
+F 1 "+VUSB" H 4825 3985 39  0000 C CNN
+F 2 "" H 4825 3875 60  0000 C CNN
+F 3 "" H 4825 3875 60  0000 C CNN
+	1    4825 3875
+	0    -1   -1   0   
+$EndComp
+Wire Wire Line
+	5225 3875 5325 3875
+Wire Wire Line
+	5725 3875 5775 3875
+Wire Wire Line
+	5775 3875 5775 3525
+Wire Wire Line
+	5425 3525 5775 3525
+Connection ~ 5775 3525
+$Comp
+L power:+VIN #PWR0108
+U 1 1 605BC783
+P 7775 3525
+F 0 "#PWR0108" H 7775 3450 30  0001 C CNN
+F 1 "+VIN" H 7775 3625 39  0000 C CNN
+F 2 "" H 7775 3525 60  0000 C CNN
+F 3 "" H 7775 3525 60  0000 C CNN
+	1    7775 3525
+	1    0    0    -1  
+$EndComp
+$Comp
+L nowae-devboard:POLOLU-2868 BRD102
+U 1 1 605C5FA2
+P 7125 3625
+F 0 "BRD102" H 7125 3925 50  0000 C CNN
+F 1 "POLOLU-2868" H 7125 3825 50  0000 C CNN
+F 2 "BOARD:POLOLU-2868" H 7125 3175 50  0001 C CNN
+F 3 "https://www.pololu.com/product/2130" V 7225 3775 50  0001 C CNN
+F 4 "Pololu Corporation" H 7125 2575 60  0001 C CNN "Manufacturer"
+F 5 "2130" H 7125 2675 60  0001 C CNN "Part Number"
+F 6 "Robot-Italy SRL" H 7125 2775 60  0001 C CNN "Distributor"
+F 7 "807831" H 7125 2875 60  0001 C CNN "Distributor Code"
+F 8 "5.450" H 7125 2975 60  0001 C CNN "Price €"
+	1    7125 3625
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	6425 3575 6725 3575
+NoConn ~ 6725 3675
+Wire Wire Line
+	7125 3875 7125 4475
+Wire Wire Line
+	7125 4475 5225 4475
+$Comp
+L power:GND #PWR0107
+U 1 1 60638D5A
+P 5225 4525
+F 0 "#PWR0107" H 5225 4525 30  0001 C CNN
+F 1 "GND" H 5225 4525 30  0001 C CNN
+F 2 "" H 5225 4525 60  0000 C CNN
+F 3 "" H 5225 4525 60  0000 C CNN
+	1    5225 4525
+	1    0    0    -1  
+$EndComp
+$Comp
+L nowae-transistor:DMP2120U-7 Q101
+U 1 1 60551975
+P 5225 3625
+F 0 "Q101" V 5575 3575 50  0000 L CNN
+F 1 "DMP2120U-7" V 5475 3325 50  0000 L CNN
+F 2 "SOT:SOT23-3" H 5225 3275 50  0001 C CNN
+F 3 "http://www.onsemi.com/pub/Collateral/FDV304P-D.PDF" H 5225 3375 50  0001 C CNN
+F 4 "Diodes Incorporated" H 5225 3175 60  0001 C CNN "Manufacturer"
+F 5 "DMP2120U-7" H 5225 3075 60  0001 C CNN "Part Number"
+F 6 "Farnell Italia S.r.l." H 5225 2975 60  0001 C CNN "Distributor"
+F 7 "3405186" H 5225 2875 60  0001 C CNN "Distributor Code"
+F 8 "0.206" H 5225 2775 60  0001 C CNN "Price €"
+F 9 "RS Components S.r.l." H 5225 2675 60  0001 C CNN "Distributor2"
+F 10 "182-7215" H 5225 2575 60  0001 C CNN "Distributor2 Code"
+F 11 "Mouser " H 5225 3625 50  0001 C CNN "Distributor3"
+F 12 "621-DMP2120U-7" H 5225 3625 50  0001 C CNN "Distributor3 Code"
+	1    5225 3625
+	0    -1   -1   0   
+$EndComp
+Wire Wire Line
+	5225 4425 5225 4475
+$Comp
+L nowae-switch:SWITCH-SPDT-WE_450405020524 SW101
+U 1 1 6056F17B
+P 6125 3525
+F 0 "SW101" H 6125 3675 50  0000 C CNN
+F 1 "450405020524" H 6125 3375 50  0000 C CNN
+F 2 "SWITCH:SWITCH-SPDT-WURTH-450405020524" H 6125 2575 50  0001 C CNN
+F 3 "https://www.we-online.com/catalog/datasheet/450405020524.pdf" H 6275 3585 50  0001 C CNN
+F 4 "Wurth Elektronik GmbH" H 6125 3250 60  0001 C CNN "Manufacturer"
+F 5 "450405020524" H 6125 3150 60  0001 C CNN "Part Number"
+F 6 "Wurth Elektronik S.r.l." H 6125 3050 60  0001 C CNN "Distributor"
+F 7 "450405020524" H 6125 2950 60  0001 C CNN "Distributor Code"
+F 8 "0.780" H 6125 2850 60  0001 C CNN "Price €"
+F 9 "Digi-Key Electronics Inc" H 6125 2775 60  0001 C CNN "Distributor2"
+F 10 "732-450405020524CT-ND" H 6125 2675 60  0001 C CNN "Distributor2 Code"
+F 11 "Mouser Electronics Inc" H 6125 2475 50  0001 C CNN "Distributor3"
+F 12 "710-450405020524" H 6125 2375 50  0001 C CNN "Distributor3 Code"
+	1    6125 3525
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	5825 3525 5775 3525
+Connection ~ 5225 4475
+Wire Wire Line
+	5225 4475 5225 4525
+NoConn ~ 6425 3475
+Wire Wire Line
+	7525 3575 7775 3575
+Wire Wire Line
+	7775 3575 7775 3525
+$Comp
+L nowae-resistor:RESISTOR R105
+U 1 1 6059005D
+P 7775 4225
+F 0 "R105" H 7775 4325 50  0000 C CNN
+F 1 "330" H 7775 4225 50  0000 C CNN
+F 2 "RESISTOR:RESISTOR-0805" H 7775 4155 30  0001 C CNN
+F 3 "" V 7775 4225 30  0001 C CNN
+F 4 "-" H 7775 4125 60  0001 C CNN "Manufacturer"
+F 5 "-" H 7775 4025 60  0001 C CNN "Part Number"
+F 6 "-" H 7775 3925 60  0001 C CNN "Distributor"
+F 7 "-" H 7775 3825 60  0001 C CNN "Distributor Code"
+F 8 "-" H 7775 3725 60  0001 C CNN "Price €"
+F 9 "-" H 7775 3625 60  0001 C CNN "Distributor2"
+F 10 "-" H 7775 3525 60  0001 C CNN "Distributor2 Code"
+F 11 "-" H 7775 3425 60  0001 C CNN "Distributor3"
+F 12 "-" H 7775 3325 60  0001 C CNN "Distributor3 Code"
+	1    7775 4225
+	0    1    1    0   
+$EndComp
+$Comp
+L nowae-led:RED DL103
+U 1 1 60591AE6
+P 7775 3775
+F 0 "DL103" H 7775 3875 50  0000 C CNN
+F 1 "RED" H 7775 3975 50  0000 C CNN
+F 2 "LEDs:LED-0805" H 7775 3775 60  0001 C CNN
+F 3 "Red" H 7775 3775 60  0001 C CNN
+F 4 "-" H 7775 3425 60  0001 C CNN "Manufacturer"
+F 5 "-" H 7775 3325 60  0001 C CNN "Part Number"
+F 6 "-" H 7775 3225 60  0001 C CNN "Distributor"
+F 7 "-" H 7775 3125 60  0001 C CNN "Distributor Code"
+F 8 "-" H 7775 3025 60  0001 C CNN "Price €"
+F 9 "-" H 7775 2925 60  0001 C CNN "Distributor2"
+F 10 "-" H 7775 2825 60  0001 C CNN "Distributor2 Code"
+F 11 "-" H 7775 2725 60  0001 C CNN "Distributor3"
+F 12 "-" H 7775 2625 60  0001 C CNN "Distributor3 Code"
+	1    7775 3775
+	0    1    1    0   
+$EndComp
+Wire Wire Line
+	7775 3975 7775 3925
+Wire Wire Line
+	7525 3675 7625 3675
+Wire Wire Line
+	7625 3675 7625 4475
+Wire Wire Line
+	7625 4475 7775 4475
+Wire Wire Line
+	7775 3575 7775 3625
+Connection ~ 7775 3575
+$Comp
+L nowae-resistor:RESISTOR R109
+U 1 1 6059C695
+P 7425 2725
+F 0 "R109" H 7425 2825 50  0000 C CNN
+F 1 "330" H 7425 2725 50  0000 C CNN
+F 2 "RESISTOR:RESISTOR-0805" H 7425 2655 30  0001 C CNN
+F 3 "" V 7425 2725 30  0001 C CNN
+F 4 "-" H 7425 2625 60  0001 C CNN "Manufacturer"
+F 5 "-" H 7425 2525 60  0001 C CNN "Part Number"
+F 6 "-" H 7425 2425 60  0001 C CNN "Distributor"
+F 7 "-" H 7425 2325 60  0001 C CNN "Distributor Code"
+F 8 "-" H 7425 2225 60  0001 C CNN "Price €"
+F 9 "-" H 7425 2125 60  0001 C CNN "Distributor2"
+F 10 "-" H 7425 2025 60  0001 C CNN "Distributor2 Code"
+F 11 "-" H 7425 1925 60  0001 C CNN "Distributor3"
+F 12 "-" H 7425 1825 60  0001 C CNN "Distributor3 Code"
+	1    7425 2725
+	0    1    1    0   
+$EndComp
+$Comp
+L nowae-led:RED DL108
+U 1 1 6059C6A8
+P 7425 2275
+F 0 "DL108" H 7425 2375 50  0000 C CNN
+F 1 "GREEN" H 7425 2475 50  0000 C CNN
+F 2 "LEDs:LED-0805" H 7425 2275 60  0001 C CNN
+F 3 "Green" H 7425 2275 60  0001 C CNN
+F 4 "-" H 7425 1925 60  0001 C CNN "Manufacturer"
+F 5 "-" H 7425 1825 60  0001 C CNN "Part Number"
+F 6 "-" H 7425 1725 60  0001 C CNN "Distributor"
+F 7 "-" H 7425 1625 60  0001 C CNN "Distributor Code"
+F 8 "-" H 7425 1525 60  0001 C CNN "Price €"
+F 9 "-" H 7425 1425 60  0001 C CNN "Distributor2"
+F 10 "-" H 7425 1325 60  0001 C CNN "Distributor2 Code"
+F 11 "-" H 7425 1225 60  0001 C CNN "Distributor3"
+F 12 "-" H 7425 1125 60  0001 C CNN "Distributor3 Code"
+	1    7425 2275
+	0    1    1    0   
+$EndComp
+Wire Wire Line
+	7425 2475 7425 2425
+Wire Wire Line
+	7425 2975 7425 3075
+$Comp
+L power:GND #PWR0124
+U 1 1 605B09F8
+P 7425 3075
+F 0 "#PWR0124" H 7425 3075 30  0001 C CNN
+F 1 "GND" H 7425 3075 30  0001 C CNN
+F 2 "" H 7425 3075 60  0000 C CNN
+F 3 "" H 7425 3075 60  0000 C CNN
+	1    7425 3075
+	1    0    0    -1  
+$EndComp
+$Comp
+L nowae-resistor:RESISTOR R110
+U 1 1 605B1171
+P 7775 2725
+F 0 "R110" H 7775 2825 50  0000 C CNN
+F 1 "330" H 7775 2725 50  0000 C CNN
+F 2 "RESISTOR:RESISTOR-0805" H 7775 2655 30  0001 C CNN
+F 3 "" V 7775 2725 30  0001 C CNN
+F 4 "-" H 7775 2625 60  0001 C CNN "Manufacturer"
+F 5 "-" H 7775 2525 60  0001 C CNN "Part Number"
+F 6 "-" H 7775 2425 60  0001 C CNN "Distributor"
+F 7 "-" H 7775 2325 60  0001 C CNN "Distributor Code"
+F 8 "-" H 7775 2225 60  0001 C CNN "Price €"
+F 9 "-" H 7775 2125 60  0001 C CNN "Distributor2"
+F 10 "-" H 7775 2025 60  0001 C CNN "Distributor2 Code"
+F 11 "-" H 7775 1925 60  0001 C CNN "Distributor3"
+F 12 "-" H 7775 1825 60  0001 C CNN "Distributor3 Code"
+	1    7775 2725
+	0    1    1    0   
+$EndComp
+$Comp
+L nowae-led:RED DL109
+U 1 1 605B1184
+P 7775 2275
+F 0 "DL109" H 7775 2375 50  0000 C CNN
+F 1 "GREEN" H 7775 2475 50  0000 C CNN
+F 2 "LEDs:LED-0805" H 7775 2275 60  0001 C CNN
+F 3 "Green" H 7775 2275 60  0001 C CNN
+F 4 "-" H 7775 1925 60  0001 C CNN "Manufacturer"
+F 5 "-" H 7775 1825 60  0001 C CNN "Part Number"
+F 6 "-" H 7775 1725 60  0001 C CNN "Distributor"
+F 7 "-" H 7775 1625 60  0001 C CNN "Distributor Code"
+F 8 "-" H 7775 1525 60  0001 C CNN "Price €"
+F 9 "-" H 7775 1425 60  0001 C CNN "Distributor2"
+F 10 "-" H 7775 1325 60  0001 C CNN "Distributor2 Code"
+F 11 "-" H 7775 1225 60  0001 C CNN "Distributor3"
+F 12 "-" H 7775 1125 60  0001 C CNN "Distributor3 Code"
+	1    7775 2275
+	0    1    1    0   
+$EndComp
+Wire Wire Line
+	7775 2475 7775 2425
+Wire Wire Line
+	7775 2975 7775 3075
+$Comp
+L power:GND #PWR0126
+U 1 1 605B1190
+P 7775 3075
+F 0 "#PWR0126" H 7775 3075 30  0001 C CNN
+F 1 "GND" H 7775 3075 30  0001 C CNN
+F 2 "" H 7775 3075 60  0000 C CNN
+F 3 "" H 7775 3075 60  0000 C CNN
+	1    7775 3075
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:+5V #PWR0123
+U 1 1 605C8C06
+P 7425 2125
+F 0 "#PWR0123" H 7425 2050 30  0001 C CNN
+F 1 "+5V" H 7425 2235 39  0000 C CNN
+F 2 "" H 7425 2125 60  0000 C CNN
+F 3 "" H 7425 2125 60  0000 C CNN
+	1    7425 2125
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:+3.3V #PWR0125
+U 1 1 605C9F1F
+P 7775 2125
+F 0 "#PWR0125" H 7775 2050 30  0001 C CNN
+F 1 "+3.3V" H 7775 2235 39  0000 C CNN
+F 2 "" H 7775 2125 60  0000 C CNN
+F 3 "" H 7775 2125 60  0000 C CNN
+	1    7775 2125
+	1    0    0    -1  
+$EndComp
+$Comp
+L nowae-resistor:RESISTOR R107
+U 1 1 6082C78A
+P 6375 4825
+F 0 "R107" H 6375 4925 50  0000 C CNN
+F 1 "TBD" H 6375 4825 50  0000 C CNN
+F 2 "RESISTOR:RESISTOR-0805" H 6375 4755 30  0001 C CNN
+F 3 "" V 6375 4825 30  0001 C CNN
+F 4 "-" H 6375 4725 60  0001 C CNN "Manufacturer"
+F 5 "-" H 6375 4625 60  0001 C CNN "Part Number"
+F 6 "-" H 6375 4525 60  0001 C CNN "Distributor"
+F 7 "-" H 6375 4425 60  0001 C CNN "Distributor Code"
+F 8 "-" H 6375 4325 60  0001 C CNN "Price €"
+F 9 "-" H 6375 4225 60  0001 C CNN "Distributor2"
+F 10 "-" H 6375 4125 60  0001 C CNN "Distributor2 Code"
+F 11 "-" H 6375 4025 60  0001 C CNN "Distributor3"
+F 12 "-" H 6375 3925 60  0001 C CNN "Distributor3 Code"
+	1    6375 4825
+	-1   0    0    1   
+$EndComp
+$Comp
+L nowae-resistor:RESISTOR R108
+U 1 1 6082D8B3
+P 6975 4825
+F 0 "R108" H 6975 4925 50  0000 C CNN
+F 1 "TBD" H 6975 4825 50  0000 C CNN
+F 2 "RESISTOR:RESISTOR-0805" H 6975 4755 30  0001 C CNN
+F 3 "" V 6975 4825 30  0001 C CNN
+F 4 "-" H 6975 4725 60  0001 C CNN "Manufacturer"
+F 5 "-" H 6975 4625 60  0001 C CNN "Part Number"
+F 6 "-" H 6975 4525 60  0001 C CNN "Distributor"
+F 7 "-" H 6975 4425 60  0001 C CNN "Distributor Code"
+F 8 "-" H 6975 4325 60  0001 C CNN "Price €"
+F 9 "-" H 6975 4225 60  0001 C CNN "Distributor2"
+F 10 "-" H 6975 4125 60  0001 C CNN "Distributor2 Code"
+F 11 "-" H 6975 4025 60  0001 C CNN "Distributor3"
+F 12 "-" H 6975 3925 60  0001 C CNN "Distributor3 Code"
+	1    6975 4825
+	-1   0    0    1   
+$EndComp
+Wire Wire Line
+	6625 4825 6675 4825
+Wire Wire Line
+	7225 4825 7325 4825
+$Comp
+L power:GND #PWR0122
+U 1 1 60848FAA
+P 7325 4825
+F 0 "#PWR0122" H 7325 4825 30  0001 C CNN
+F 1 "GND" H 7325 4825 30  0001 C CNN
+F 2 "" H 7325 4825 60  0000 C CNN
+F 3 "" H 7325 4825 60  0000 C CNN
+	1    7325 4825
+	0    -1   -1   0   
+$EndComp
+$Comp
+L power:+VBAT #PWR0120
+U 1 1 608496C7
+P 6025 4825
+F 0 "#PWR0120" H 6025 4750 30  0001 C CNN
+F 1 "+VBAT" H 6025 4935 40  0000 C CNN
+F 2 "" H 6025 4825 60  0000 C CNN
+F 3 "" H 6025 4825 60  0000 C CNN
+	1    6025 4825
+	0    -1   -1   0   
+$EndComp
+Wire Wire Line
+	6025 4825 6125 4825
+Wire Wire Line
+	6675 4825 6675 4725
+Wire Wire Line
+	6675 4725 7375 4725
+Connection ~ 6675 4825
+Wire Wire Line
+	6675 4825 6725 4825
+Text Label 7375 4725 2    50   ~ 0
+ADC_BAT_STATUS
+$Comp
+L nowae-diode:MBRA340T3G D102
+U 1 1 606EF5E7
+P 5525 3875
+F 0 "D102" H 5525 3975 50  0000 C CNN
+F 1 "MBRA340T3G" H 5525 3775 50  0000 C CNN
+F 2 "DIODE:DIODE-DO214AC-UNI" H 5525 3675 60  0001 C CNN
+F 3 "http://www.onsemi.com/pub/Collateral/MBRA340T3-D.PDF" H 5525 3575 60  0001 C CNN
+F 4 "ON Semiconductor" H 5525 3475 60  0001 C CNN "Manufacturer"
+F 5 "MBRA340T3G" H 5525 3375 60  0001 C CNN "Part Number"
+F 6 "Farnell Italia S.r.l." H 5525 3275 60  0001 C CNN "Distributor"
+F 7 "1431078" H 5525 3175 60  0001 C CNN "Distributor Code"
+F 8 "0.396" H 5525 3075 60  0001 C CNN "Price €"
+	1    5525 3875
+	1    0    0    -1  
+$EndComp
+$Comp
+L nowae-diode:ESDA25P35-1U1M D101
+U 1 1 6071A31E
+P 3175 2475
+F 0 "D101" H 3175 2575 50  0000 C CNN
+F 1 "ESDA25P35" H 3175 2375 50  0000 C CNN
+F 2 "DIODE:DIODE-0805" H 3175 1675 60  0001 C CNN
+F 3 "http://www.st.com/content/ccc/resource/technical/document/datasheet/ff/c0/80/cc/19/4c/45/af/CD00001333.pdf/files/CD00001333.pdf/jcr:content/translations/en.CD00001333.pdf" H 3175 2275 60  0001 C CNN
+F 4 "ST Microelectronics" H 3175 2175 60  0001 C CNN "Manufacturer"
+F 5 "ESDA25P35-1U1M" H 3175 2075 60  0001 C CNN "Part Number"
+F 6 "Farnell" H 3175 1975 60  0001 C CNN "Distributor"
+F 7 "2723332" H 3175 1875 60  0001 C CNN "Distributor Code"
+F 8 "0.35" H 3175 1775 60  0001 C CNN "Price €"
+	1    3175 2475
+	0    -1   -1   0   
+$EndComp
+$Comp
+L power:GND #PWR0104
+U 1 1 60621036
+P 3525 3075
+F 0 "#PWR0104" H 3525 3075 30  0001 C CNN
+F 1 "GND" H 3525 3075 30  0001 C CNN
+F 2 "" H 3525 3075 60  0000 C CNN
+F 3 "" H 3525 3075 60  0000 C CNN
+	1    3525 3075
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:+VUSB #PWR?
+U 1 1 649F0AA8
+P 3175 2125
+F 0 "#PWR?" H 3175 2050 30  0001 C CNN
+F 1 "+VUSB" H 3175 2225 39  0000 C CNN
+F 2 "" H 3175 2125 60  0000 C CNN
+F 3 "" H 3175 2125 60  0000 C CNN
+	1    3175 2125
+	1    0    0    -1  
+$EndComp
+$EndSCHEMATC

@@ -1,0 +1,238 @@
+EESchema Schematic File Version 4
+EELAYER 30 0
+EELAYER END
+$Descr A4 11693 8268
+encoding utf-8
+Sheet 7 7
+Title "GiammaBOT - Mainboard"
+Date "2021-03-21"
+Rev "1"
+Comp ""
+Comment1 "M. Giammarini"
+Comment2 "N. Orlandini"
+Comment3 "M. Giammarini"
+Comment4 ""
+$EndDescr
+$Comp
+L nowae-devboard:POLOLU-2130 BRD?
+U 1 1 60505D7F
+P 5800 3825
+F 0 "BRD?" H 5800 4440 50  0000 C CNN
+F 1 "POLOLU-2130" H 5800 4349 50  0000 C CNN
+F 2 "BOARD:POLOLU-2130" H 5800 3825 50  0001 C CNN
+F 3 "https://www.pololu.com/product/2130" H 5800 3825 50  0001 C CNN
+F 4 "Pololu Corporation" H 5800 2775 60  0001 C CNN "Manufacturer"
+F 5 "2130" H 5800 2875 60  0001 C CNN "Part Number"
+F 6 "Robot-Italy SRL" H 5800 2975 60  0001 C CNN "Distributor"
+F 7 "807831" H 5800 3075 60  0001 C CNN "Distributor Code"
+F 8 "5.450" H 5800 3175 60  0001 C CNN "Price €"
+	1    5800 3825
+	1    0    0    -1  
+$EndComp
+$Comp
+L nowae-connector:CONN_2X1 P?
+U 1 1 6051BB08
+P 6950 3575
+F 0 "P?" H 7050 3625 50  0000 L CNN
+F 1 "MOTOR_SX" H 7050 3525 50  0000 L CNN
+F 2 "CONNECTOR_MPT:CONN-MPT0.5_2-2.54" H 7325 3575 60  0001 C CNN
+F 3 "" H 7325 3575 60  0001 C CNN
+F 4 "-" H 6950 3225 60  0001 C CNN "Manufacturer"
+F 5 "-" H 6950 3125 60  0001 C CNN "Part Number"
+F 6 "-" H 6950 3025 60  0001 C CNN "Distributor"
+F 7 "-" H 6950 2925 60  0001 C CNN "Distributor Code"
+F 8 "-" H 6950 2825 60  0001 C CNN "Price €"
+F 9 "-" H 6950 2725 60  0001 C CNN "Distributor2"
+F 10 "-" H 6950 2625 60  0001 C CNN "Distributor2 Code"
+F 11 "-" H 6950 2525 60  0001 C CNN "Distributor3"
+F 12 "-" H 6950 2425 60  0001 C CNN "Distributor3 Code"
+	1    6950 3575
+	1    0    0    -1  
+$EndComp
+$Comp
+L nowae-connector:CONN_2X1 P?
+U 1 1 6051D541
+P 6950 4075
+F 0 "P?" H 7050 4025 50  0000 L CNN
+F 1 "MOTOR_DX" H 7050 4125 50  0000 L CNN
+F 2 "CONNECTOR_MPT:CONN-MPT0.5_2-2.54" H 7325 4075 60  0001 C CNN
+F 3 "" H 7325 4075 60  0001 C CNN
+F 4 "-" H 6950 3725 60  0001 C CNN "Manufacturer"
+F 5 "-" H 6950 3625 60  0001 C CNN "Part Number"
+F 6 "-" H 6950 3525 60  0001 C CNN "Distributor"
+F 7 "-" H 6950 3425 60  0001 C CNN "Distributor Code"
+F 8 "-" H 6950 3325 60  0001 C CNN "Price €"
+F 9 "-" H 6950 3225 60  0001 C CNN "Distributor2"
+F 10 "-" H 6950 3125 60  0001 C CNN "Distributor2 Code"
+F 11 "-" H 6950 3025 60  0001 C CNN "Distributor3"
+F 12 "-" H 6950 2925 60  0001 C CNN "Distributor3 Code"
+	1    6950 4075
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	6200 3775 6600 3775
+Wire Wire Line
+	6600 3775 6600 3625
+Wire Wire Line
+	6600 3625 6800 3625
+Wire Wire Line
+	6200 3675 6500 3675
+Wire Wire Line
+	6500 3675 6500 3525
+Wire Wire Line
+	6500 3525 6800 3525
+Wire Wire Line
+	6200 3875 6600 3875
+Wire Wire Line
+	6600 3875 6600 4025
+Wire Wire Line
+	6600 4025 6800 4025
+Wire Wire Line
+	6200 3975 6500 3975
+Wire Wire Line
+	6500 3975 6500 4125
+Wire Wire Line
+	6500 4125 6800 4125
+Wire Wire Line
+	6200 3475 6300 3475
+$Comp
+L power:GND #PWR?
+U 1 1 605C3A4F
+P 6300 3475
+F 0 "#PWR?" H 6300 3475 30  0001 C CNN
+F 1 "GND" H 6300 3475 30  0001 C CNN
+F 2 "" H 6300 3475 60  0000 C CNN
+F 3 "" H 6300 3475 60  0000 C CNN
+	1    6300 3475
+	0    -1   -1   0   
+$EndComp
+Wire Wire Line
+	6200 3575 6400 3575
+$Comp
+L power:+VIN #PWR?
+U 1 1 605C3FF6
+P 6400 2875
+F 0 "#PWR?" H 6400 2800 30  0001 C CNN
+F 1 "+VIN" H 6400 2975 39  0000 C CNN
+F 2 "" H 6400 2875 60  0000 C CNN
+F 3 "" H 6400 2875 60  0000 C CNN
+	1    6400 2875
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	6400 3575 6400 2925
+Wire Wire Line
+	5400 3475 5300 3475
+$Comp
+L power:GND #PWR?
+U 1 1 605CEC17
+P 5300 3475
+F 0 "#PWR?" H 5300 3475 30  0001 C CNN
+F 1 "GND" H 5300 3475 30  0001 C CNN
+F 2 "" H 5300 3475 60  0000 C CNN
+F 3 "" H 5300 3475 60  0000 C CNN
+	1    5300 3475
+	0    1    1    0   
+$EndComp
+NoConn ~ 5400 3575
+Wire Wire Line
+	5400 3675 4700 3675
+Wire Wire Line
+	5400 3775 4700 3775
+Text Label 4700 3675 0    50   ~ 0
+MOTOR_SX_CTR1
+Text Label 4700 3775 0    50   ~ 0
+MOTOR_SX_CTR2
+Wire Wire Line
+	5400 3875 4700 3875
+Wire Wire Line
+	5400 3975 4700 3975
+Text Label 4700 3975 0    50   ~ 0
+MOTOR_DX_CTR1
+Text Label 4700 3875 0    50   ~ 0
+MOTOR_DX_CTR2
+Wire Wire Line
+	5400 4075 4700 4075
+Wire Wire Line
+	5400 4175 4700 4175
+Text Label 4700 4075 0    50   ~ 0
+MOTOR_SLEEP
+Text Label 4700 4175 0    50   ~ 0
+MOTOR_FAULT
+NoConn ~ 6200 4075
+NoConn ~ 6200 4175
+$Comp
+L nowae-capacitor:CAPACITOR C?
+U 1 1 6075621D
+P 6850 3125
+F 0 "C?" H 6850 3225 50  0000 L CNN
+F 1 "100n" H 6850 3025 50  0000 L CNN
+F 2 "CAPACITOR:CAPACITOR-0805" H 6888 2975 30  0001 C CNN
+F 3 "" H 6850 3225 60  0001 C CNN
+F 4 "-" H 6965 3034 30  0001 L CNN "Parameters"
+F 5 "-" H 6850 2775 60  0001 C CNN "Manufacturer"
+F 6 "-" H 6850 2675 60  0001 C CNN "Part Number"
+F 7 "-" H 6850 2575 60  0001 C CNN "Distributor"
+F 8 "-" H 6850 2475 60  0001 C CNN "Distributor Code"
+F 9 "-" H 6850 2375 60  0001 C CNN "Price €"
+F 10 "-" H 6850 2275 60  0001 C CNN "Distributor2"
+F 11 "-" H 6850 2175 60  0001 C CNN "Distributor2 Code"
+F 12 "-" H 6850 2075 60  0001 C CNN "Distributor3"
+F 13 "-" H 6850 1975 60  0001 C CNN "Distributor3 Code"
+	1    6850 3125
+	1    0    0    -1  
+$EndComp
+$Comp
+L nowae-capacitor:CAPACITOR C?
+U 1 1 60756231
+P 6600 3125
+F 0 "C?" H 6400 3025 50  0000 L CNN
+F 1 "10u" H 6450 3225 50  0000 L CNN
+F 2 "CAPACITOR:CAPACITOR-1206" H 6638 2975 30  0001 C CNN
+F 3 "" H 6600 3225 60  0001 C CNN
+F 4 "-" H 6715 3034 30  0001 L CNN "Parameters"
+F 5 "-" H 6600 2775 60  0001 C CNN "Manufacturer"
+F 6 "-" H 6600 2675 60  0001 C CNN "Part Number"
+F 7 "-" H 6600 2575 60  0001 C CNN "Distributor"
+F 8 "-" H 6600 2475 60  0001 C CNN "Distributor Code"
+F 9 "-" H 6600 2375 60  0001 C CNN "Price €"
+F 10 "-" H 6600 2275 60  0001 C CNN "Distributor2"
+F 11 "-" H 6600 2175 60  0001 C CNN "Distributor2 Code"
+F 12 "-" H 6600 2075 60  0001 C CNN "Distributor3"
+F 13 "-" H 6600 1975 60  0001 C CNN "Distributor3 Code"
+	1    6600 3125
+	-1   0    0    1   
+$EndComp
+Wire Wire Line
+	6600 2925 6600 2975
+Connection ~ 6600 2925
+Wire Wire Line
+	6850 2975 6850 2925
+Wire Wire Line
+	6850 2925 6600 2925
+Wire Wire Line
+	6850 3275 6850 3325
+Wire Wire Line
+	6850 3325 6600 3325
+Wire Wire Line
+	6600 3275 6600 3325
+$Comp
+L power:GND #PWR?
+U 1 1 60756243
+P 6850 3375
+F 0 "#PWR?" H 6850 3375 30  0001 C CNN
+F 1 "GND" H 6850 3375 30  0001 C CNN
+F 2 "" H 6850 3375 60  0000 C CNN
+F 3 "" H 6850 3375 60  0000 C CNN
+	1    6850 3375
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	6850 3375 6850 3325
+Connection ~ 6850 3325
+Wire Wire Line
+	6400 2925 6600 2925
+Connection ~ 6400 2925
+Wire Wire Line
+	6400 2925 6400 2875
+$EndSCHEMATC

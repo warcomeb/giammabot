@@ -1,0 +1,434 @@
+EESchema Schematic File Version 4
+EELAYER 30 0
+EELAYER END
+$Descr A4 11693 8268
+encoding utf-8
+Sheet 5 7
+Title "GiammaBOT - Mainboard"
+Date "2021-03-21"
+Rev "1"
+Comp ""
+Comment1 "M. Giammarini"
+Comment2 "N. Orlandini"
+Comment3 "M. Giammarini"
+Comment4 ""
+$EndDescr
+$Comp
+L nowae-wireless:ESP32-WROOM-32E(8MB) U?
+U 1 1 6051E630
+P 6225 4025
+F 0 "U?" H 6200 5412 60  0000 C CNN
+F 1 "ESP32-WROOM-32E(8MB)" H 6200 5306 60  0000 C CNN
+F 2 "WIFI:ESP32-WROOM-32D" H 6225 2375 60  0001 C CNN
+F 3 "https://www.espressif.com/sites/default/files/documentation/esp32-wroom-32d_esp32-wroom-32u_datasheet_en.pdf" H 5775 4475 60  0001 C CNN
+F 4 "Espressif" H 6225 2875 60  0001 C CNN "Manufacturer"
+F 5 "ESP32-WROOM-32E(8MB)" H 6225 2775 60  0001 C CNN "Part Number"
+F 6 "Digikey" H 6225 2675 60  0001 C CNN "Distributor"
+F 7 "1965-ESP32-WROOM-32E(8MB)CT-ND" H 6225 2575 60  0001 C CNN "Distributor Code"
+F 8 "2.31" H 6225 2475 60  0001 C CNN "Price €"
+	1    6225 4025
+	1    0    0    -1  
+$EndComp
+Text Label 7675 4375 2    50   ~ 0
+UART_CMD_RX
+Wire Wire Line
+	7025 4475 7675 4475
+Text Label 7675 4475 2    50   ~ 0
+UART_CMD_TX
+Wire Wire Line
+	7025 4375 7675 4375
+Text Label 7675 3675 2    50   ~ 0
+ESP_PROG_TX
+Wire Wire Line
+	7025 3775 7775 3775
+Wire Wire Line
+	7025 3675 7775 3675
+Text Label 7675 3775 2    50   ~ 0
+ESP_PROG_RX
+Wire Wire Line
+	7025 3375 7125 3375
+Wire Wire Line
+	7125 3375 7125 3275
+Wire Wire Line
+	7025 3275 7125 3275
+Connection ~ 7125 3275
+Wire Wire Line
+	7125 3275 7125 3175
+$Comp
+L power:GND #PWR?
+U 1 1 606F77ED
+P 7125 3175
+F 0 "#PWR?" H 7125 3175 30  0001 C CNN
+F 1 "GND" H 7125 3175 30  0001 C CNN
+F 2 "" H 7125 3175 60  0000 C CNN
+F 3 "" H 7125 3175 60  0000 C CNN
+	1    7125 3175
+	-1   0    0    1   
+$EndComp
+Wire Wire Line
+	5375 3375 5275 3375
+Wire Wire Line
+	5275 3375 5275 3175
+$Comp
+L power:GND #PWR?
+U 1 1 606FEED9
+P 5275 3175
+F 0 "#PWR?" H 5275 3175 30  0001 C CNN
+F 1 "GND" H 5275 3175 30  0001 C CNN
+F 2 "" H 5275 3175 60  0000 C CNN
+F 3 "" H 5275 3175 60  0000 C CNN
+	1    5275 3175
+	-1   0    0    1   
+$EndComp
+NoConn ~ 5875 4975
+NoConn ~ 5975 4975
+NoConn ~ 6075 4975
+NoConn ~ 6175 4975
+NoConn ~ 6275 4975
+NoConn ~ 6375 4975
+NoConn ~ 6475 4975
+NoConn ~ 6575 4975
+Wire Wire Line
+	5775 4975 5775 5075
+$Comp
+L power:GND #PWR?
+U 1 1 6073B4CE
+P 5775 5075
+F 0 "#PWR?" H 5775 5075 30  0001 C CNN
+F 1 "GND" H 5775 5075 30  0001 C CNN
+F 2 "" H 5775 5075 60  0000 C CNN
+F 3 "" H 5775 5075 60  0000 C CNN
+	1    5775 5075
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	5375 3475 5175 3475
+Wire Wire Line
+	5175 3475 5175 3225
+$Comp
+L nowae-capacitor:CAPACITOR C?
+U 1 1 6074C36B
+P 4975 3225
+F 0 "C?" H 4775 3125 50  0000 L CNN
+F 1 "100n" H 4775 3325 50  0000 L CNN
+F 2 "CAPACITOR:CAPACITOR-0805" H 5013 3075 30  0001 C CNN
+F 3 "" H 4975 3325 60  0001 C CNN
+F 4 "-" H 5090 3134 30  0001 L CNN "Parameters"
+F 5 "-" H 4975 2875 60  0001 C CNN "Manufacturer"
+F 6 "-" H 4975 2775 60  0001 C CNN "Part Number"
+F 7 "-" H 4975 2675 60  0001 C CNN "Distributor"
+F 8 "-" H 4975 2575 60  0001 C CNN "Distributor Code"
+F 9 "-" H 4975 2475 60  0001 C CNN "Price €"
+F 10 "-" H 4975 2375 60  0001 C CNN "Distributor2"
+F 11 "-" H 4975 2275 60  0001 C CNN "Distributor2 Code"
+F 12 "-" H 4975 2175 60  0001 C CNN "Distributor3"
+F 13 "-" H 4975 2075 60  0001 C CNN "Distributor3 Code"
+	1    4975 3225
+	0    1    1    0   
+$EndComp
+$Comp
+L nowae-capacitor:CAPACITOR C?
+U 1 1 6074D4B0
+P 4975 2975
+F 0 "C?" H 4975 3075 50  0000 L CNN
+F 1 "10u" H 4975 2875 50  0000 L CNN
+F 2 "CAPACITOR:CAPACITOR-1206" H 5013 2825 30  0001 C CNN
+F 3 "" H 4975 3075 60  0001 C CNN
+F 4 "-" H 5090 2884 30  0001 L CNN "Parameters"
+F 5 "-" H 4975 2625 60  0001 C CNN "Manufacturer"
+F 6 "-" H 4975 2525 60  0001 C CNN "Part Number"
+F 7 "-" H 4975 2425 60  0001 C CNN "Distributor"
+F 8 "-" H 4975 2325 60  0001 C CNN "Distributor Code"
+F 9 "-" H 4975 2225 60  0001 C CNN "Price €"
+F 10 "-" H 4975 2125 60  0001 C CNN "Distributor2"
+F 11 "-" H 4975 2025 60  0001 C CNN "Distributor2 Code"
+F 12 "-" H 4975 1925 60  0001 C CNN "Distributor3"
+F 13 "-" H 4975 1825 60  0001 C CNN "Distributor3 Code"
+	1    4975 2975
+	0    -1   -1   0   
+$EndComp
+Wire Wire Line
+	5175 2975 5125 2975
+Connection ~ 5175 2975
+Wire Wire Line
+	5125 3225 5175 3225
+Connection ~ 5175 3225
+Wire Wire Line
+	5175 3225 5175 2975
+Wire Wire Line
+	4825 3225 4775 3225
+Wire Wire Line
+	4775 3225 4775 2975
+Wire Wire Line
+	4825 2975 4775 2975
+$Comp
+L power:GND #PWR?
+U 1 1 60788A87
+P 4775 3325
+F 0 "#PWR?" H 4775 3325 30  0001 C CNN
+F 1 "GND" H 4775 3325 30  0001 C CNN
+F 2 "" H 4775 3325 60  0000 C CNN
+F 3 "" H 4775 3325 60  0000 C CNN
+	1    4775 3325
+	1    0    0    -1  
+$EndComp
+Text Label 4725 3575 0    50   ~ 0
+ESP_ENABLE
+$Comp
+L nowae-capacitor:CAPACITOR C?
+U 1 1 6056AC77
+P 4625 3875
+F 0 "C?" H 4525 3775 50  0000 L CNN
+F 1 "100n" H 4425 3975 50  0000 L CNN
+F 2 "CAPACITOR:CAPACITOR-0805" H 4663 3725 30  0001 C CNN
+F 3 "" H 4625 3975 60  0001 C CNN
+F 4 "-" H 4740 3784 30  0001 L CNN "Parameters"
+F 5 "-" H 4625 3525 60  0001 C CNN "Manufacturer"
+F 6 "-" H 4625 3425 60  0001 C CNN "Part Number"
+F 7 "-" H 4625 3325 60  0001 C CNN "Distributor"
+F 8 "-" H 4625 3225 60  0001 C CNN "Distributor Code"
+F 9 "-" H 4625 3125 60  0001 C CNN "Price €"
+F 10 "-" H 4625 3025 60  0001 C CNN "Distributor2"
+F 11 "-" H 4625 2925 60  0001 C CNN "Distributor2 Code"
+F 12 "-" H 4625 2825 60  0001 C CNN "Distributor3"
+F 13 "-" H 4625 2725 60  0001 C CNN "Distributor3 Code"
+	1    4625 3875
+	-1   0    0    1   
+$EndComp
+Wire Wire Line
+	4625 3575 4625 3475
+Connection ~ 4625 3575
+$Comp
+L power:GND #PWR?
+U 1 1 6057E501
+P 4625 4175
+F 0 "#PWR?" H 4625 4175 30  0001 C CNN
+F 1 "GND" H 4625 4175 30  0001 C CNN
+F 2 "" H 4625 4175 60  0000 C CNN
+F 3 "" H 4625 4175 60  0000 C CNN
+	1    4625 4175
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	4625 4175 4625 4125
+Wire Wire Line
+	4775 3325 4775 3225
+Connection ~ 4775 3225
+$Comp
+L nowae-resistor:RESISTOR R?
+U 1 1 60591561
+P 4625 3225
+F 0 "R?" H 4625 3125 50  0000 C CNN
+F 1 "10k" H 4625 3225 50  0000 C CNN
+F 2 "RESISTOR:RESISTOR-0805" H 4625 3155 30  0001 C CNN
+F 3 "" V 4625 3225 30  0001 C CNN
+F 4 "-" H 4625 3125 60  0001 C CNN "Manufacturer"
+F 5 "-" H 4625 3025 60  0001 C CNN "Part Number"
+F 6 "-" H 4625 2925 60  0001 C CNN "Distributor"
+F 7 "-" H 4625 2825 60  0001 C CNN "Distributor Code"
+F 8 "-" H 4625 2725 60  0001 C CNN "Price €"
+F 9 "-" H 4625 2625 60  0001 C CNN "Distributor2"
+F 10 "-" H 4625 2525 60  0001 C CNN "Distributor2 Code"
+F 11 "-" H 4625 2425 60  0001 C CNN "Distributor3"
+F 12 "-" H 4625 2325 60  0001 C CNN "Distributor3 Code"
+	1    4625 3225
+	0    1    1    0   
+$EndComp
+Wire Wire Line
+	4625 2975 4625 2825
+$Comp
+L nowae-connector:CONN_3X1 P?
+U 1 1 605D8FDC
+P 7925 3775
+F 0 "P?" H 7925 3975 50  0000 C CNN
+F 1 "ESP_PROG" H 7925 3575 50  0000 C CNN
+F 2 "CONNECTOR:CONN-STRIP-3x1-2.54" H 8300 3775 60  0001 C CNN
+F 3 "" H 8300 3775 60  0001 C CNN
+F 4 "-" H 7925 3425 60  0001 C CNN "Manufacturer"
+F 5 "-" H 7925 3325 60  0001 C CNN "Part Number"
+F 6 "-" H 7925 3225 60  0001 C CNN "Distributor"
+F 7 "-" H 7925 3125 60  0001 C CNN "Distributor Code"
+F 8 "-" H 7925 3025 60  0001 C CNN "Price €"
+F 9 "-" H 7925 2925 60  0001 C CNN "Distributor2"
+F 10 "-" H 7925 2825 60  0001 C CNN "Distributor2 Code"
+F 11 "-" H 7925 2725 60  0001 C CNN "Distributor3"
+F 12 "-" H 7925 2625 60  0001 C CNN "Distributor3 Code"
+	1    7925 3775
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	7775 3875 7575 3875
+Wire Wire Line
+	7575 3875 7575 3925
+$Comp
+L power:GND #PWR?
+U 1 1 605EF44E
+P 7575 3925
+F 0 "#PWR?" H 7575 3925 30  0001 C CNN
+F 1 "GND" H 7575 3925 30  0001 C CNN
+F 2 "" H 7575 3925 60  0000 C CNN
+F 3 "" H 7575 3925 60  0000 C CNN
+	1    7575 3925
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	5175 2825 5175 2975
+$Comp
+L power:+3.3V #PWR?
+U 1 1 60601520
+P 4625 2825
+F 0 "#PWR?" H 4625 2750 30  0001 C CNN
+F 1 "+3.3V" H 4625 2935 39  0000 C CNN
+F 2 "" H 4625 2825 60  0000 C CNN
+F 3 "" H 4625 2825 60  0000 C CNN
+	1    4625 2825
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:+3.3V #PWR?
+U 1 1 6060210F
+P 5175 2825
+F 0 "#PWR?" H 5175 2750 30  0001 C CNN
+F 1 "+3.3V" H 5175 2935 39  0000 C CNN
+F 2 "" H 5175 2825 60  0000 C CNN
+F 3 "" H 5175 2825 60  0000 C CNN
+	1    5175 2825
+	1    0    0    -1  
+$EndComp
+$Comp
+L nowae-connector:CONN_2X1 P?
+U 1 1 60603F51
+P 5025 3875
+F 0 "P?" H 5025 4025 50  0000 C CNN
+F 1 "EN_JMP" H 5025 3725 50  0000 C CNN
+F 2 "CONNECTOR:CONN-STRIP-2x1-2.54" H 5400 3875 60  0001 C CNN
+F 3 "" H 5400 3875 60  0001 C CNN
+F 4 "-" H 5025 3525 60  0001 C CNN "Manufacturer"
+F 5 "-" H 5025 3425 60  0001 C CNN "Part Number"
+F 6 "-" H 5025 3325 60  0001 C CNN "Distributor"
+F 7 "-" H 5025 3225 60  0001 C CNN "Distributor Code"
+F 8 "-" H 5025 3125 60  0001 C CNN "Price €"
+F 9 "-" H 5025 3025 60  0001 C CNN "Distributor2"
+F 10 "-" H 5025 2925 60  0001 C CNN "Distributor2 Code"
+F 11 "-" H 5025 2825 60  0001 C CNN "Distributor3"
+F 12 "-" H 5025 2725 60  0001 C CNN "Distributor3 Code"
+	1    5025 3875
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	4875 3825 4825 3825
+Wire Wire Line
+	4625 3575 4625 3625
+Wire Wire Line
+	4875 3925 4825 3925
+Wire Wire Line
+	4825 3925 4825 4125
+Wire Wire Line
+	4825 4125 4625 4125
+Connection ~ 4625 4125
+Wire Wire Line
+	4625 4125 4625 4025
+$Comp
+L nowae-capacitor:CAPACITOR C?
+U 1 1 60635650
+P 7675 4975
+F 0 "C?" H 7675 4875 50  0000 L CNN
+F 1 "100n" H 7675 5075 50  0000 L CNN
+F 2 "CAPACITOR:CAPACITOR-0805" H 7713 4825 30  0001 C CNN
+F 3 "" H 7675 5075 60  0001 C CNN
+F 4 "-" H 7790 4884 30  0001 L CNN "Parameters"
+F 5 "-" H 7675 4625 60  0001 C CNN "Manufacturer"
+F 6 "-" H 7675 4525 60  0001 C CNN "Part Number"
+F 7 "-" H 7675 4425 60  0001 C CNN "Distributor"
+F 8 "-" H 7675 4325 60  0001 C CNN "Distributor Code"
+F 9 "-" H 7675 4225 60  0001 C CNN "Price €"
+F 10 "-" H 7675 4125 60  0001 C CNN "Distributor2"
+F 11 "-" H 7675 4025 60  0001 C CNN "Distributor2 Code"
+F 12 "-" H 7675 3925 60  0001 C CNN "Distributor3"
+F 13 "-" H 7675 3825 60  0001 C CNN "Distributor3 Code"
+	1    7675 4975
+	1    0    0    1   
+$EndComp
+$Comp
+L power:GND #PWR?
+U 1 1 6063565D
+P 7675 5275
+F 0 "#PWR?" H 7675 5275 30  0001 C CNN
+F 1 "GND" H 7675 5275 30  0001 C CNN
+F 2 "" H 7675 5275 60  0000 C CNN
+F 3 "" H 7675 5275 60  0000 C CNN
+	1    7675 5275
+	-1   0    0    -1  
+$EndComp
+Wire Wire Line
+	7675 5275 7675 5225
+$Comp
+L nowae-connector:CONN_2X1 P?
+U 1 1 60635671
+P 7275 4975
+F 0 "P?" H 7275 5125 50  0000 C CNN
+F 1 "BOOT_JMP" H 7275 4825 50  0000 C CNN
+F 2 "CONNECTOR:CONN-STRIP-2x1-2.54" H 7650 4975 60  0001 C CNN
+F 3 "" H 7650 4975 60  0001 C CNN
+F 4 "-" H 7275 4625 60  0001 C CNN "Manufacturer"
+F 5 "-" H 7275 4525 60  0001 C CNN "Part Number"
+F 6 "-" H 7275 4425 60  0001 C CNN "Distributor"
+F 7 "-" H 7275 4325 60  0001 C CNN "Distributor Code"
+F 8 "-" H 7275 4225 60  0001 C CNN "Price €"
+F 9 "-" H 7275 4125 60  0001 C CNN "Distributor2"
+F 10 "-" H 7275 4025 60  0001 C CNN "Distributor2 Code"
+F 11 "-" H 7275 3925 60  0001 C CNN "Distributor3"
+F 12 "-" H 7275 3825 60  0001 C CNN "Distributor3 Code"
+	1    7275 4975
+	-1   0    0    -1  
+$EndComp
+Wire Wire Line
+	7425 4925 7475 4925
+Wire Wire Line
+	7675 4675 7675 4725
+Wire Wire Line
+	7425 5025 7475 5025
+Wire Wire Line
+	7475 5025 7475 5225
+Wire Wire Line
+	7475 5225 7675 5225
+Connection ~ 7675 5225
+Wire Wire Line
+	7675 5225 7675 5125
+Text Label 7675 4675 2    50   ~ 0
+ESP_BOOT
+Wire Wire Line
+	7025 4675 7675 4675
+Wire Wire Line
+	7475 4925 7475 4725
+Wire Wire Line
+	7475 4725 7675 4725
+Connection ~ 7675 4725
+Wire Wire Line
+	7675 4725 7675 4825
+Wire Wire Line
+	4625 3575 5375 3575
+Wire Wire Line
+	4825 3825 4825 3625
+Wire Wire Line
+	4825 3625 4625 3625
+Connection ~ 4625 3625
+Wire Wire Line
+	4625 3625 4625 3725
+Text Label 7675 4075 2    50   ~ 0
+ESP2MCU_01
+Wire Wire Line
+	7025 4175 7675 4175
+Wire Wire Line
+	7025 4075 7675 4075
+Wire Wire Line
+	7025 4275 7675 4275
+Text Label 7675 4175 2    50   ~ 0
+ESP2MCU_02
+Text Label 7675 4275 2    50   ~ 0
+ESP2MCU_03
+Text Label 7675 4575 2    50   ~ 0
+ESP2MCU_04
+Wire Wire Line
+	7675 4575 7025 4575
+$EndSCHEMATC
