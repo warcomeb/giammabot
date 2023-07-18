@@ -29,14 +29,10 @@ F 8 "2.31" H 6225 2475 60  0001 C CNN "Price €"
 	1    6225 4025
 	1    0    0    -1  
 $EndComp
-Text Label 7675 4375 2    50   ~ 0
-UART_CMD_RX
 Wire Wire Line
-	7025 4475 7675 4475
-Text Label 7675 4475 2    50   ~ 0
-UART_CMD_TX
+	7025 4475 7375 4475
 Wire Wire Line
-	7025 4375 7675 4375
+	7025 4375 7375 4375
 Text Label 7675 3675 2    50   ~ 0
 ESP_PROG_TX
 Wire Wire Line
@@ -431,4 +427,8 @@ Text Label 7675 4575 2    50   ~ 0
 ESP2MCU_04
 Wire Wire Line
 	7675 4575 7025 4575
+Text HLabel 7375 4375 2    50   Output ~ 0
+ESP_CMD_TX
+Text HLabel 7375 4475 2    50   Input ~ 0
+ESP_CMD_RX
 $EndSCHEMATC

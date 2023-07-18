@@ -121,14 +121,10 @@ NoConn ~ 4200 3975
 NoConn ~ 7200 4575
 NoConn ~ 7200 4475
 NoConn ~ 7200 3175
-Text Label 6150 3975 0    50   ~ 0
-UART_CMD_RX
 Wire Wire Line
-	6150 3975 6900 3975
-Text Label 6150 3575 0    50   ~ 0
-UART_CMD_TX
+	6525 3975 6900 3975
 Wire Wire Line
-	6150 3575 6900 3575
+	6525 3575 6900 3575
 $Comp
 L power:+5V #PWR?
 U 1 1 605C7743
@@ -288,4 +284,16 @@ Text HLabel 3450 3575 0    50   Output ~ 0
 LED_RX_BLUE
 Text HLabel 4550 2875 2    50   Output ~ 0
 LED_LX_GREEN
+Text HLabel 9550 2950 2    50   BiDi ~ 0
+SENSOR_I2C_SDA
+Text HLabel 9575 3075 2    50   Output ~ 0
+SENSOR_I2C_SCL
+Text HLabel 9500 3200 2    50   Input ~ 0
+ACCELEROMETER_INT1
+Text HLabel 9500 3300 2    50   Input ~ 0
+ACCELEROMETER_INT2
+Text HLabel 6525 3575 0    50   Output ~ 0
+UART_CMD_TX
+Text HLabel 6525 3975 0    50   Input ~ 0
+UART_CMD_RX
 $EndSCHEMATC
