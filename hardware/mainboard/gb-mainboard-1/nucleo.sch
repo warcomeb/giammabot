@@ -61,22 +61,14 @@ Wire Wire Line
 	7200 4375 7525 4375
 Wire Wire Line
 	7525 3575 7200 3575
-Text Label 6150 3875 0    50   ~ 0
-MOTOR_SX_CTR1
-Text Label 6150 3775 0    50   ~ 0
-MOTOR_SX_CTR2
 Wire Wire Line
-	6900 3875 6150 3875
+	6900 3875 6525 3875
 Wire Wire Line
-	6150 3775 6900 3775
-Text Label 6150 4375 0    50   ~ 0
-MOTOR_DX_CTR1
+	6525 3775 6900 3775
 Wire Wire Line
-	6900 4375 6150 4375
-Text Label 7950 3375 2    50   ~ 0
-MOTOR_DX_CTR2
+	6900 4375 6550 4375
 Wire Wire Line
-	7950 3375 7200 3375
+	7525 3375 7200 3375
 Wire Wire Line
 	4200 3875 4450 3875
 $Comp
@@ -150,21 +142,13 @@ $EndComp
 Wire Wire Line
 	4200 4375 4550 4375
 Wire Wire Line
-	7950 2775 7200 2775
-Text Label 7950 2775 2    50   ~ 0
-ESP2MCU_01
+	7525 2775 7200 2775
 Wire Wire Line
-	7950 2875 7200 2875
-Text Label 7950 2875 2    50   ~ 0
-ESP2MCU_02
+	7525 2875 7200 2875
 Wire Wire Line
-	7950 2975 7200 2975
-Text Label 6150 2775 0    50   ~ 0
-ESP2MCU_03
+	7525 2975 7200 2975
 Wire Wire Line
-	6150 2775 6900 2775
-Text Label 7950 2975 2    50   ~ 0
-ESP2MCU_04
+	6525 2775 6900 2775
 Wire Wire Line
 	4200 2775 4550 2775
 Wire Wire Line
@@ -284,16 +268,46 @@ Text HLabel 3450 3575 0    50   Output ~ 0
 LED_RX_BLUE
 Text HLabel 4550 2875 2    50   Output ~ 0
 LED_LX_GREEN
-Text HLabel 9550 2950 2    50   BiDi ~ 0
+Text HLabel 9625 3000 2    50   BiDi ~ 0
 SENSOR_I2C_SDA
-Text HLabel 9575 3075 2    50   Output ~ 0
+Text HLabel 9650 3125 2    50   Output ~ 0
 SENSOR_I2C_SCL
-Text HLabel 9500 3200 2    50   Input ~ 0
+Text HLabel 9575 3250 2    50   Input ~ 0
 ACCELEROMETER_INT1
-Text HLabel 9500 3300 2    50   Input ~ 0
+Text HLabel 9575 3350 2    50   Input ~ 0
 ACCELEROMETER_INT2
 Text HLabel 6525 3575 0    50   Output ~ 0
 UART_CMD_TX
 Text HLabel 6525 3975 0    50   Input ~ 0
 UART_CMD_RX
+Text HLabel 6525 3775 0    50   Output ~ 0
+MOTOR_SX_CTR2
+Text HLabel 6525 3875 0    50   Output ~ 0
+MOTOR_SX_CTR1
+Text HLabel 6550 4375 0    50   Output ~ 0
+MOTOR_DX_CTR1
+Text HLabel 7525 3375 2    50   Output ~ 0
+MOTOR_DX_CTR2
+Text HLabel 10175 3525 0    50   Input ~ 0
+MOTOR_FAULT
+Text HLabel 10100 3650 0    50   Output ~ 0
+MOTOR_SLEEP
+Wire Notes Line
+	9100 2650 10650 2650
+Wire Notes Line
+	10650 2650 10650 4175
+Wire Notes Line
+	10650 4175 9100 4175
+Wire Notes Line
+	9100 4175 9100 2650
+Text Notes 9625 2625 0    50   ~ 0
+TODO
+Text HLabel 7525 2775 2    50   BiDi ~ 0
+ESP2MCU_01
+Text HLabel 7525 2875 2    50   BiDi ~ 0
+ESP2MCU_02
+Text HLabel 7525 2975 2    50   BiDi ~ 0
+ESP2MCU_04
+Text HLabel 6525 2775 0    50   BiDi ~ 0
+ESP2MCU_03
 $EndSCHEMATC
